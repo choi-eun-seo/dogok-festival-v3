@@ -1,0 +1,252 @@
+@import "tailwindcss";
+@import "./pretendard.css";
+
+@font-face {
+  font-family: "SUIT Variable";
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/variable/woff2/SUIT-Variable.woff2")
+    format("woff2");
+}
+
+/* 넥슨 워헤이븐. Regular 400 / Bold 700 */
+@font-face {
+  font-family: "Warhaven";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/WarhavenR.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Warhaven";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/WarhavenB.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --brand-brown-500: #A86537;
+  --brand-brown-700: #754223;
+  --brand-yellow-300: #FCF8D0;
+
+  /* 시안 폭. 이 폭에서 calc(N * var(--px)) = Npx */
+  --design-mo: 360;
+  --design-pc: 1920;
+  /* 360 시안이 태블릿 너비까지 커지지 않도록 폰 구간만 확대 */
+  --mo-scale-max: 480px;
+  --px: min(
+    calc(100vw / var(--design-mo)),
+    calc(var(--mo-scale-max) / var(--design-mo))
+  );
+  /* 헤더: 위 26 + 로고 41 + 아래 23 */
+  --header-h: calc(90 * var(--px));
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand-brown-500: var(--brand-brown-500);
+  --color-brand-brown-700: var(--brand-brown-700);
+  --color-brand-yellow-300: var(--brand-yellow-300);
+}
+
+@theme {
+  --font-sans: "Pretendard Variable", Pretendard, system-ui, sans-serif;
+  --font-pretendard: "Pretendard Variable", Pretendard, system-ui, sans-serif;
+  --font-suit: "SUIT Variable", SUIT, system-ui, sans-serif;
+  --font-warhaven: "Warhaven", system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* pc: / max-pc: — 아래 미디어쿼리와 같은 값 */
+  --breakpoint-pc: 1280px;
+
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --px: calc(100vw / var(--design-pc));
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html {
+  /* 1rem = 시안 16px. text-base, p-4, gap-6 도 화면 비율을 따라간다 */
+  font-size: calc(16 * var(--px));
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: clip;
+}
+
+.animate-bird-in {
+  animation: bird-in 2.8s cubic-bezier(0.16, 0.7, 0.3, 1) both;
+}
+
+.animate-bird-float {
+  animation: bird-float 3.2s ease-in-out 2.2s infinite both;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.animate-star-big {
+  animation: star-big 4.4s ease-in-out 0.9s infinite both;
+}
+
+.animate-star-small {
+  animation: star-small 3.8s ease-in-out 0.25s infinite both;
+}
+
+.animate-star-big,
+.animate-star-small {
+  transform-origin: center;
+  will-change: transform, opacity, filter;
+}
+
+.star-delay-one {
+  animation-delay: 1.1s;
+}
+
+.star-delay-two {
+  animation-delay: 1.8s;
+}
+
+.tree-rise {
+  opacity: 0;
+  transform: scaleY(0.04) scaleX(0.88);
+  transform-origin: bottom center;
+  will-change: transform, opacity;
+}
+
+.trees-visible .tree-rise {
+  animation: tree-rise 850ms cubic-bezier(0.22, 0.8, 0.32, 1.18) forwards;
+}
+
+.trees-visible .tree-delay-1 {
+  animation-delay: 80ms;
+}
+
+.trees-visible .tree-delay-2 {
+  animation-delay: 180ms;
+}
+
+.trees-visible .tree-delay-3 {
+  animation-delay: 280ms;
+}
+
+.trees-visible .tree-delay-4 {
+  animation-delay: 380ms;
+}
+
+.trees-visible .tree-delay-5 {
+  animation-delay: 480ms;
+}
+
+@keyframes bird-in {
+  0% {
+    opacity: 0;
+    transform: translate3d(calc(-420 * var(--px)), calc(-160 * var(--px)), 0)
+      rotate(-16deg);
+  }
+  72% {
+    opacity: 1;
+    transform: translate3d(calc(16 * var(--px)), calc(8 * var(--px)), 0)
+      rotate(4deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+
+@keyframes bird-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, calc(-10 * var(--px)), 0) rotate(-1.5deg);
+  }
+}
+
+@keyframes star-big {
+  0%,
+  100% {
+    opacity: 0.76;
+    transform: scale(0.92);
+    filter: brightness(0.92) drop-shadow(0 0 0 rgba(255, 244, 173, 0));
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+    filter: brightness(1.18)
+      drop-shadow(0 0 calc(7 * var(--px)) rgba(255, 244, 173, 0.65));
+  }
+}
+
+@keyframes star-small {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(0.9);
+    filter: brightness(0.94);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+    filter: brightness(1.2)
+      drop-shadow(0 0 calc(5 * var(--px)) rgba(255, 244, 173, 0.55));
+  }
+}
+
+@keyframes tree-rise {
+  0% {
+    opacity: 0;
+    transform: scaleY(0.04) scaleX(0.88);
+  }
+  64% {
+    opacity: 1;
+    transform: scaleY(1.08) scaleX(0.97);
+  }
+  82% {
+    transform: scaleY(0.96) scaleX(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1) scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-bird-in,
+  .animate-bird-float,
+  .animate-star-big,
+  .animate-star-small {
+    animation: none;
+  }
+
+  .tree-rise,
+  .trees-visible .tree-rise {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+
