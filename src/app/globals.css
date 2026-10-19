@@ -35,6 +35,8 @@
   --brand-brown-500: #A86537;
   --brand-brown-700: #754223;
   --brand-yellow-300: #FCF8D0;
+  --brand-blue-500: #02578E;
+  --brand-green-300: #9ECE7A;
 
   /* 시안 폭. 이 폭에서 calc(N * var(--px)) = Npx */
   --design-mo: 360;
@@ -55,6 +57,8 @@
   --color-brand-brown-500: var(--brand-brown-500);
   --color-brand-brown-700: var(--brand-brown-700);
   --color-brand-yellow-300: var(--brand-yellow-300);
+  --color-brand-blue-500: var(--brand-blue-500);
+  --color-brand-green-300: var(--brand-green-300);
 }
 
 @theme {
@@ -159,20 +163,20 @@ body {
 
 .animate-maple,
 .animate-maple-fast {
-  transform-origin: center;
+  transform-origin: 42% 58%;
   will-change: transform;
 }
 
 .animate-maple {
-  animation: maple-sway 3.4s ease-in-out infinite;
+  animation: maple-wind 4.6s ease-in-out infinite;
 }
 
 .animate-maple-fast {
-  animation: maple-flutter 2.3s ease-in-out infinite;
+  animation: maple-flutter 3.6s ease-in-out infinite;
 }
 
 .maple-slow {
-  animation-duration: 4.1s;
+  animation-duration: 6.6s;
 }
 
 .maple-delay-1 {
@@ -199,6 +203,20 @@ body {
   animation-direction: reverse;
 }
 
+.animate-cloud {
+  animation: cloud-float 7.2s ease-in-out infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.cloud-slow {
+  animation-duration: 9s;
+}
+
+.cloud-delay {
+  animation-delay: 1.6s;
+}
+
 @keyframes bird-in {
   0% {
     opacity: 0;
@@ -213,6 +231,22 @@ body {
   100% {
     opacity: 1;
     transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+
+@keyframes cloud-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  28% {
+    transform: translate3d(calc(8 * var(--px)), calc(-18 * var(--px)), 0);
+  }
+  52% {
+    transform: translate3d(calc(3 * var(--px)), calc(-4 * var(--px)), 0);
+  }
+  76% {
+    transform: translate3d(calc(-7 * var(--px)), calc(-22 * var(--px)), 0);
   }
 }
 
@@ -256,35 +290,25 @@ body {
   }
 }
 
-@keyframes maple-sway {
+@keyframes maple-wind {
   0%,
   100% {
-    transform: rotate(-8deg) translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0) rotate(-5deg);
   }
-  28% {
-    transform: rotate(7deg) translate3d(calc(5 * var(--px)), calc(-6 * var(--px)), 0);
-  }
-  52% {
-    transform: rotate(-5deg) translate3d(calc(-4 * var(--px)), calc(3 * var(--px)), 0);
-  }
-  76% {
-    transform: rotate(10deg) translate3d(calc(3 * var(--px)), calc(-4 * var(--px)), 0);
+  50% {
+    transform: translate3d(calc(16 * var(--px)), calc(-12 * var(--px)), 0)
+      rotate(7deg);
   }
 }
 
 @keyframes maple-flutter {
   0%,
   100% {
-    transform: rotate(8deg) translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0) rotate(5deg);
   }
-  22% {
-    transform: rotate(-11deg) translate3d(calc(-4 * var(--px)), calc(-5 * var(--px)), 0);
-  }
-  48% {
-    transform: rotate(5deg) translate3d(calc(3 * var(--px)), calc(4 * var(--px)), 0);
-  }
-  74% {
-    transform: rotate(-7deg) translate3d(calc(-5 * var(--px)), calc(-2 * var(--px)), 0);
+  50% {
+    transform: translate3d(calc(-12 * var(--px)), calc(-16 * var(--px)), 0)
+      rotate(-8deg);
   }
 }
 
@@ -312,7 +336,8 @@ body {
   .animate-star-big,
   .animate-star-small,
   .animate-maple,
-  .animate-maple-fast {
+  .animate-maple-fast,
+  .animate-cloud {
     animation: none;
   }
 
@@ -323,6 +348,5 @@ body {
     transform: none;
   }
 }
-
 
 
