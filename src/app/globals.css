@@ -157,6 +157,48 @@ body {
   animation-delay: 480ms;
 }
 
+.animate-maple,
+.animate-maple-fast {
+  transform-origin: center;
+  will-change: transform;
+}
+
+.animate-maple {
+  animation: maple-sway 3.4s ease-in-out infinite;
+}
+
+.animate-maple-fast {
+  animation: maple-flutter 2.3s ease-in-out infinite;
+}
+
+.maple-slow {
+  animation-duration: 4.1s;
+}
+
+.maple-delay-1 {
+  animation-delay: 0.15s;
+}
+
+.maple-delay-2 {
+  animation-delay: 0.55s;
+}
+
+.maple-delay-3 {
+  animation-delay: 0.9s;
+}
+
+.maple-delay-4 {
+  animation-delay: 0.3s;
+}
+
+.maple-delay-5 {
+  animation-delay: 1.15s;
+}
+
+.maple-reverse {
+  animation-direction: reverse;
+}
+
 @keyframes bird-in {
   0% {
     opacity: 0;
@@ -214,6 +256,38 @@ body {
   }
 }
 
+@keyframes maple-sway {
+  0%,
+  100% {
+    transform: rotate(-8deg) translate3d(0, 0, 0);
+  }
+  28% {
+    transform: rotate(7deg) translate3d(calc(5 * var(--px)), calc(-6 * var(--px)), 0);
+  }
+  52% {
+    transform: rotate(-5deg) translate3d(calc(-4 * var(--px)), calc(3 * var(--px)), 0);
+  }
+  76% {
+    transform: rotate(10deg) translate3d(calc(3 * var(--px)), calc(-4 * var(--px)), 0);
+  }
+}
+
+@keyframes maple-flutter {
+  0%,
+  100% {
+    transform: rotate(8deg) translate3d(0, 0, 0);
+  }
+  22% {
+    transform: rotate(-11deg) translate3d(calc(-4 * var(--px)), calc(-5 * var(--px)), 0);
+  }
+  48% {
+    transform: rotate(5deg) translate3d(calc(3 * var(--px)), calc(4 * var(--px)), 0);
+  }
+  74% {
+    transform: rotate(-7deg) translate3d(calc(-5 * var(--px)), calc(-2 * var(--px)), 0);
+  }
+}
+
 @keyframes tree-rise {
   0% {
     opacity: 0;
@@ -236,7 +310,9 @@ body {
   .animate-bird-in,
   .animate-bird-float,
   .animate-star-big,
-  .animate-star-small {
+  .animate-star-small,
+  .animate-maple,
+  .animate-maple-fast {
     animation: none;
   }
 

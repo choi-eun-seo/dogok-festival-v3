@@ -17,9 +17,13 @@ import guitar from "@/assets/main/guitar.svg";
 import car from "@/assets/main/car.svg";
 import person from "@/assets/main/person.svg";
 import group from "@/assets/main/Group1.svg";
-
+import yellowBig from "@/assets/main/maple/yellow-big.svg";
 import greenL from "@/assets/main/green-l.svg";
 import greenR from "@/assets/main/green-r.svg";
+import sm from "@/assets/main/maple/sm.svg";
+import big from "@/assets/main/maple/big.svg";
+import maple1 from "@/assets/main/maple/maple_1.svg";
+import yellowSm from "@/assets/main/maple/yellow-sm.svg";
 
 const treeInitialStyle = {
   opacity: 0,
@@ -298,7 +302,7 @@ export default function Hero() {
           src={car}
           alt=""
           priority
-          className="absolute bottom-[calc(900*var(--px))] left-0 z-10 h-auto w-[calc(86*var(--px))] ml-[calc(1245*var(--px))]"
+          className="absolute bottom-[calc(853*var(--px))] left-0 z-10 h-auto w-[calc(181*var(--px))] ml-[calc(522*var(--px))]"
         />
         <Image
           src={person}
@@ -311,6 +315,36 @@ export default function Hero() {
           alt=""
           priority
           className="absolute bottom-[calc(698*var(--px))] left-0 z-25 h-auto w-[calc(125*var(--px))] ml-[calc(493*var(--px))]"
+        />
+        <Image
+          src={yellowBig}
+          alt=""
+          priority
+          className="animate-maple maple-slow maple-delay-1 absolute bottom-[calc(179*var(--px))] left-0 z-25 h-auto w-[calc(90*var(--px))] ml-[calc(578*var(--px))]"
+        />
+        <Image
+          src={sm}
+          alt=""
+          priority
+          className="animate-maple-fast maple-delay-2 absolute bottom-[calc(419*var(--px))] left-0 z-25 h-auto w-[calc(32*var(--px))] ml-[calc(676*var(--px))]"
+        />
+        <Image
+          src={big}
+          alt=""
+          priority
+          className="animate-maple maple-reverse maple-delay-3 absolute bottom-[calc(490*var(--px))] left-0 z-25 h-auto w-[calc(60*var(--px))] ml-[calc(803*var(--px))]"
+        />
+        <Image
+          src={maple1}
+          alt=""
+          priority
+          className="animate-maple maple-slow maple-reverse maple-delay-4 absolute bottom-[calc(282*var(--px))] left-0 z-25 h-auto w-[calc(94*var(--px))] ml-[calc(1132*var(--px))]"
+        />
+        <Image
+          src={yellowSm}
+          alt=""
+          priority
+          className="animate-maple-fast maple-delay-5 absolute bottom-[calc(285*var(--px))] left-0 z-25 h-auto w-[calc(33*var(--px))] ml-[calc(1485*var(--px))]"
         />
       </section>
     </>
