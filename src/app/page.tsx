@@ -4,6 +4,7 @@ import Intro from "@/components/Sections/Intro";
 import Program from "@/components/Sections/Program";
 import Market from "@/components/Sections/Market";
 import Play from "@/components/Sections/Play";
+import Food from "@/components/Sections/Food";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <Program />
         <Market />
         <Play />
+        <Food />
       </main>
     </div>
   );
