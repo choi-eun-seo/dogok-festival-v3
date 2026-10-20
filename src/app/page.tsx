@@ -5,6 +5,7 @@ import Program from "@/components/Sections/Program";
 import Market from "@/components/Sections/Market";
 import Play from "@/components/Sections/Play";
 import Food from "@/components/Sections/Food";
+import Outro from "@/components/Sections/Outro";
 
 export default function Home() {
   return (
@@ -17,6 +18,8 @@ export default function Home() {
         <Market />
         <Play />
         <Food />
+
+        <Outro />
       </main>
     </div>
   );

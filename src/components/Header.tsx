@@ -10,7 +10,7 @@ const menus = [
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-brand-brown-500">
+    <header className="fixed top-0 left-0 right-0 z-100 bg-brand-brown-500">
       <div className="container mx-auto flex flex-row items-center pt-[calc(26*var(--px))] pb-[calc(23*var(--px))]">
         <a href="#hero">
           <Image
