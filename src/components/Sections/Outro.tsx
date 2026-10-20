@@ -8,7 +8,7 @@ function BrownStar({ className }: { className: string }) {
     <svg
       viewBox="0 0 46 59"
       aria-hidden
-      className={`absolute h-[29px] w-[22px] text-brand-brown-700 ${className}`}
+      className={`absolute h-[calc(29*var(--px))] w-[calc(22*var(--px))] text-brand-brown-700 ${className}`}
     >
       <path
         d="M22.6441 57.5841C22.2567 57.5841 21.931 57.3023 21.8694 56.9238L18.3217 34.5452L1.38401 30.3106C1.02307 30.2226 0.776581 29.8881 0.785385 29.5183C0.802991 29.1486 1.07589 28.8316 1.44564 28.7788L19.0259 25.9705L21.8606 1.4966C21.9046 1.10044 22.2391 0.801117 22.6441 0.801117C23.0402 0.801117 23.3748 1.10044 23.4276 1.4966L26.2623 25.9705L43.8425 28.7788C44.2123 28.8404 44.4852 29.1486 44.5028 29.5183C44.5204 29.8881 44.2739 30.2226 43.9042 30.3106L26.9665 34.5452L23.4188 56.9238C23.3571 57.3023 23.0314 57.5841 22.6441 57.5841Z"
@@ -59,7 +59,14 @@ export default function Outro() {
       <div className="items-end pl-[calc(360*var(--px))] bg-gray-100 py-[calc(42*var(--px))]">
         <div className="flex flex-row items-center gap-[calc(80*var(--px))]">
           <div>
-            <Image src={logo2} alt="logo2" width={266} height={71} />
+            <Image
+              src={logo2}
+              alt="logo2"
+              width={266}
+              height={71}
+              className="h-auto w-[calc(266*var(--px))]"
+              style={{ height: "auto" }}
+            />
           </div>
           <div className="flex flex-col gap-[calc(10*var(--px))] font-suit text-[#797979] text-[calc(16*var(--px))]">
             <p className="font-semibold">도곡 메타세쿼이아 로드 페스타 시즌3</p>

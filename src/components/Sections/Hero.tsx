@@ -117,7 +117,8 @@ export default function Hero() {
 
   return (
     <>
-      <section id="hero" ref={sectionRef} className="section-target relative w-full">
+      <section id="hero" ref={sectionRef} className="hero-section section-target relative w-full">
+        <div className="hero-scene relative w-full">
         <Image
           src={hero}
           alt="도곡 메타세쿼이아 로드 페스타 메인 비주얼"
@@ -352,6 +353,7 @@ export default function Hero() {
           priority
           className="animate-maple-fast maple-delay-5 absolute bottom-[calc(285*var(--px))] left-0 z-25 h-auto w-[calc(33*var(--px))] ml-[calc(1485*var(--px))]"
         />
+        </div>
       </section>
     </>
   );

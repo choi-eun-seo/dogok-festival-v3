@@ -81,9 +81,9 @@ export default function VenueMap() {
         title: "강남수도사업소 삼거리",
         icon: {
           content: `<div style="position:relative;width:0;height:0;">
-            <div style="position:absolute;left:0;bottom:0;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:4px;pointer-events:none;">
-              <div style="white-space:nowrap;padding:6px 12px;border-radius:999px;background:#754223;color:#fff;font-family:inherit;font-size:13px;font-weight:700;box-shadow:0 2px 6px rgba(0,0,0,.2);">강남수도사업소 삼거리</div>
-              <svg width="26" height="36" viewBox="0 0 26 36" aria-hidden="true"><path d="M13 0C5.8 0 0 5.8 0 13c0 9.4 13 23 13 23s13-13.6 13-23C26 5.8 20.2 0 13 0z" fill="#385CFF"/><circle cx="13" cy="13" r="5" fill="#fff"/></svg>
+            <div style="position:absolute;left:0;bottom:0;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:calc(4*var(--px));pointer-events:none;">
+              <div style="white-space:nowrap;padding:calc(6*var(--px)) calc(12*var(--px));border-radius:999px;background:#754223;color:#fff;font-family:inherit;font-size:calc(13*var(--px));font-weight:700;box-shadow:0 2px 6px rgba(0,0,0,.2);">강남수도사업소 삼거리</div>
+              <svg viewBox="0 0 26 36" aria-hidden="true" style="width:calc(26*var(--px));height:calc(36*var(--px));"><path d="M13 0C5.8 0 0 5.8 0 13c0 9.4 13 23 13 23s13-13.6 13-23C26 5.8 20.2 0 13 0z" fill="#385CFF"/><circle cx="13" cy="13" r="5" fill="#fff"/></svg>
             </div>
           </div>`,
         },
@@ -98,7 +98,8 @@ export default function VenueMap() {
       });
       const fit = () => {
         map?.autoResize();
-        map?.fitBounds(points, { top: 100, right: 45, bottom: 45, left: 45, maxZoom: 18 });
+        const px = parseFloat(getComputedStyle(document.documentElement).fontSize) / 16;
+        map?.fitBounds(points, { top: 100 * px, right: 45 * px, bottom: 45 * px, left: 45 * px, maxZoom: 18 });
       };
       fit();
       observer = new ResizeObserver(() => {
