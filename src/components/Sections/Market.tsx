@@ -3,11 +3,11 @@ import { market as marketData } from "@/app/app.const";
 import person from "@/assets/main/person.svg";
 import group3 from "@/assets/program/group3.png";
 import group4 from "@/assets/program/group4.png";
-import OpenBook from "@/components/Sections/OpenBook";
+import OpenBook from "@/components/OpenBook";
 
 export default function Market() {
   return (
-    <section className="relative min-h-[calc(1000*var(--px))] w-full bg-brand-green-300">
+    <section id="market" className="section-target relative box-content min-h-[calc(1000*var(--px))] w-full bg-brand-green-300 pb-[calc(120*var(--px))]">
       <div className="relative z-30 pt-[calc(75*var(--px))]">
         <p className="text-brand-brown-700 text-center font-suit text-[calc(18*var(--px))] font-bold">
           Chapter 1
@@ -42,9 +42,9 @@ export default function Market() {
           </div>
         ))}
       </div>
-      <Image src={person} alt="" className="absolute bottom-0 left-0 w-[calc(284*var(--px))] ml-[calc(268*var(--px))]  z-30" />
-      <Image src={group3} alt="" className="absolute bottom-0 right-0 w-[calc(133*var(--px))] mr-[calc(483*var(--px))]  z-30" />
-      <Image src={group4} alt="" className="absolute bottom-0 right-0 w-[calc(176*var(--px))] mr-[calc(277*var(--px))]  z-30" />
+      <Image src={person} alt="" className="absolute bottom-30 left-0 w-[calc(284*var(--px))] ml-[calc(268*var(--px))]  z-40" />
+      <Image src={group3} alt="" className="absolute bottom-20 right-0 w-[calc(133*var(--px))] mr-[calc(483*var(--px))]  z-30" />
+      <Image src={group4} alt="" className="absolute bottom-20 right-0 w-[calc(176*var(--px))] mr-[calc(277*var(--px))]  z-30" />
 
     </section>
   );

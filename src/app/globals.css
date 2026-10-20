@@ -89,6 +89,15 @@
 html {
   /* 1rem = 시안 16px. text-base, p-4, gap-6 도 화면 비율을 따라간다 */
   font-size: calc(16 * var(--px));
+  scroll-behavior: smooth;
+}
+
+.section-target {
+  scroll-margin-top: var(--header-h);
+}
+
+#program {
+  scroll-margin-top: calc(var(--header-h) + 140 * var(--px));
 }
 
 body {

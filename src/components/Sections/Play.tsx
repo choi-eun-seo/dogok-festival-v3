@@ -5,7 +5,7 @@ import { useLayoutEffect, useRef } from "react";
 import { play as playData } from "@/app/app.const";
 import market from "@/assets/program/market.png";
 import draw from "@/assets/program/draw.svg";
-import OpenBook from "@/components/Sections/OpenBook";
+import OpenBook from "@/components/OpenBook";
 
 function PlayCard({ name, tag }: { name: string; tag?: string }) {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -96,8 +96,8 @@ function PlayCard({ name, tag }: { name: string; tag?: string }) {
 
 export default function Play() {
   return (
-    <section className="relative min-h-[calc(1330*var(--px))] w-full bg-brand-green-300">
-      <div className="relative z-30 pt-[calc(265*var(--px))]">
+    <section id="play" className="section-target relative min-h-[calc(1330*var(--px))] w-full bg-brand-green-300">
+      <div className="relative z-30 pt-[calc(65*var(--px))]">
         <p className="text-brand-brown-700 text-center font-suit text-[calc(18*var(--px))] font-bold">
           Chapter 2
         </p>
@@ -110,7 +110,7 @@ export default function Play() {
           체험의 한 페이지를 채워보세요.
         </p>
       </div>
-      <div className="absolute top-[calc(190*var(--px))] z-20 left-0 w-[calc(1185*var(--px))] h-auto ml-[calc(366*var(--px))]">
+      <div className="absolute top-[calc(0*var(--px))] z-20 left-0 w-[calc(1185*var(--px))] h-auto ml-[calc(366*var(--px))]">
         <OpenBook
           cover="#F4B1D0"
           edge="#FDE8F0"
@@ -126,12 +126,12 @@ export default function Play() {
       <Image
         src={market}
         alt=""
-        className="absolute bottom-30 left-0 w-[calc(331*var(--px))] ml-[calc(254*var(--px))]  z-50"
+        className="absolute bottom-80 left-0 w-[calc(331*var(--px))] ml-[calc(254*var(--px))]  z-50"
       />
       <Image
         src={draw}
         alt=""
-        className="absolute bottom-15 right-0 w-[calc(428*var(--px))] mr-[calc(238*var(--px))]  z-50"
+        className="absolute bottom-65 right-0 w-[calc(428*var(--px))] mr-[calc(238*var(--px))]  z-50"
       />
 
     </section>

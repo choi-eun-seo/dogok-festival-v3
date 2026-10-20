@@ -1,3 +1,5 @@
+"use client";
+
 import star from "@/assets/main/star.svg";
 import type { CSSProperties } from "react";
 import Image from "next/image";
@@ -11,11 +13,12 @@ import tree1 from "@/assets/main/tree/tree1.svg";
 import tree2 from "@/assets/main/tree/tree2.svg";
 import treeGreen from "@/assets/main/tree/tree-g2.svg";
 import treeYellow from "@/assets/main/tree/tree4.svg";
-import bookshell from "@/assets/program/bookshell.png";
-import BookButton from "@/components/Sections/BookButton";
+import bookshelf from "@/assets/program/bookshelf.png";
+import BookButton from "@/components/BookButton";
 import load from "@/assets/program/load.svg";
 import maple from "@/assets/main/maple/maple_1.svg";
 import loadScenery from "@/assets/program/load-scenery.svg";
+import { useRef, useEffect } from "react";
 
 const hillTrees = [
   { src: tree1, width: 173, offset: 0 },
@@ -29,16 +32,78 @@ const pillarHeight = 148;
 const pillarOverlap = 66;
 
 const bookCovers = [
-  { name: "MARKET", color: "#F8B23B" },
-  { name: "PLAY", color: "#ECB3CC" },
-  { name: "FOOD", color: "#C2E0F4" },
-  { name: "MUSIC", color: "#C6BBE4" },
-  { name: "HEALING", color: "#FBE8B9" },
+  { name: "MARKET", color: "#F8B23B", href: "#market" },
+  { name: "PLAY", color: "#ECB3CC", href: "#play" },
+  { name: "FOOD", color: "#C2E0F4", href: "#food" },
+  { name: "MUSIC", color: "#C6BBE4", href: "#music" },
+  { name: "HEALING", color: "#FBE8B9", href: "#healing" },
 ];
 
+const treeInitialStyle = {
+  opacity: 0,
+  transform: "scaleY(0.04) scaleX(0.88)",
+  transformOrigin: "bottom center",
+} satisfies CSSProperties;
+
 function HillTrees() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+
+    if (!section) return;
+
+    const revealScene = () => {
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      section.querySelectorAll<HTMLElement>("[data-tree]").forEach((tree) => {
+        if (reduceMotion) {
+          tree.style.opacity = "1";
+          tree.style.transform = "none";
+          return;
+        }
+
+        tree.animate(
+          [
+            { opacity: 0, transform: "scaleY(0.04) scaleX(0.88)" },
+            {
+              opacity: 1,
+              transform: "scaleY(1.08) scaleX(0.97)",
+              offset: 0.64,
+            },
+            { transform: "scaleY(0.96) scaleX(1.02)", offset: 0.82 },
+            { opacity: 1, transform: "scaleY(1) scaleX(1)" },
+          ],
+          {
+            duration: 850,
+            delay: Number(tree.dataset.treeDelay ?? 0),
+            easing: "cubic-bezier(0.22, 0.8, 0.32, 1.18)",
+            fill: "forwards",
+          },
+        );
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+
+        revealScene();
+        observer.disconnect();
+      },
+      { rootMargin: "0px 0px -10% 0px" },
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div
+      ref={sectionRef}
       aria-hidden="true"
       className="pointer-events-none absolute inset-x-0 top-[calc(1360*var(--px))] h-[calc(620*var(--px))] overflow-hidden"
     >
@@ -70,12 +135,15 @@ function HillTrees() {
               key={index}
               src={tree.src}
               alt=""
-              className="absolute z-10 h-auto"
+              className="tree-rise absolute z-10 h-auto"
               style={{
+                ...treeInitialStyle,
                 width: `calc(${tree.width} * var(--px))`,
                 bottom: `calc(${pillarHeight - pillarOverlap} * var(--px))`,
                 [side]: `calc(${tree.offset} * var(--px))`,
               }}
+              data-tree
+              data-tree-delay={(hillTrees.length - 1 - index) * 100}
             />
           ))}
         </div>
@@ -109,9 +177,9 @@ function TitleStar() {
 
 export default function Program() {
   return (
-    <section className="relative w-full">
+    <section id="map" className="section-target relative w-full">
       <div
-        className="h-[calc(2792*var(--px))] w-full"
+        className="min-h-[calc(2792*var(--px))] w-full"
         style={{
           background: "linear-gradient(180deg, #E6F5FC 0%, #67B9E7 100%)",
         }}
@@ -165,14 +233,20 @@ export default function Program() {
         이미지로 저장하기
       </div>
       <Image
-        src={bookshell}
+        id="program"
+        src={bookshelf}
         alt=""
         priority
-        className="absolute top-[calc(1500*var(--px))] left-0 z-20 w-[calc(1030*var(--px))] h-auto object-cover ml-[calc(445*var(--px))]"
+        className="section-target absolute top-[calc(1500*var(--px))] left-0 z-20 w-[calc(1030*var(--px))] h-auto object-cover ml-[calc(445*var(--px))]"
       />
       <div className="absolute top-[calc(1710*var(--px))] left-0 z-20 ml-[calc(591*var(--px))] flex flex-row gap-[calc(22*var(--px))]">
         {bookCovers.map((book) => (
-          <BookButton key={book.name} color={book.color} name={book.name} />
+          <BookButton
+            key={book.name}
+            color={book.color}
+            name={book.name}
+            href={book.href}
+          />
         ))}
       </div>
       <div
@@ -183,14 +257,19 @@ export default function Program() {
         <Image
           src={maple}
           alt=""
-          className="absolute top-[calc(135*var(--px))] left-[calc(198*var(--px))] h-auto w-[calc(80*var(--px))]"
+          className="animate-maple absolute top-[calc(135*var(--px))] left-[calc(198*var(--px))] h-auto w-[calc(80*var(--px))]"
         />
         <svg
           viewBox="0 0 35 35"
           fill="none"
-          className="absolute top-[calc(235*var(--px))] left-[calc(752*var(--px))] w-[calc(35*var(--px))] h-auto"
+          className="animate-maple absolute top-[calc(235*var(--px))] left-[calc(752*var(--px))] w-[calc(35*var(--px))] h-auto"
         >
-          <path d="M6 29C5 14 13 5 29 5C29 20 20 28 6 29Z" fill="#358045" stroke="#754223" strokeWidth="2.5" />
+          <path
+            d="M6 29C5 14 13 5 29 5C29 20 20 28 6 29Z"
+            fill="#358045"
+            stroke="#754223"
+            strokeWidth="2.5"
+          />
           <path d="M6 29L26 8" stroke="#754223" strokeWidth="2" />
         </svg>
         <Image
@@ -199,7 +278,6 @@ export default function Program() {
           className="absolute top-0 left-0 h-auto w-full"
         />
       </div>
-
     </section>
   );
 }

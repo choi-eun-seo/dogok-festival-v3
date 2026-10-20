@@ -117,7 +117,7 @@ export default function Hero() {
 
   return (
     <>
-      <section ref={sectionRef} className="relative w-full">
+      <section id="hero" ref={sectionRef} className="section-target relative w-full">
         <Image
           src={hero}
           alt="도곡 메타세쿼이아 로드 페스타 메인 비주얼"

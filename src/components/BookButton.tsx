@@ -3,9 +3,10 @@ import { useId } from "react";
 type BookButtonProps = {
   color: string;
   name: string;
+  href?: string;
 };
 
-export default function BookButton({ color, name }: BookButtonProps) {
+export default function BookButton({ color, name, href }: BookButtonProps) {
   const uid = useId().replace(/:/g, "");
   const clipId = `book-clip-${uid}`;
   const maskId = `book-mask-${uid}`;
@@ -14,7 +15,7 @@ export default function BookButton({ color, name }: BookButtonProps) {
   const startY = 162 - ((letters.length - 1) * gap) / 2;
 
   return (
-    <button type="button" aria-label={name} className="shrink-0">
+    <a href={href} aria-label={name} className="shrink-0">
       <svg
         viewBox="0 0 129 368"
         fill="none"
@@ -69,6 +70,6 @@ export default function BookButton({ color, name }: BookButtonProps) {
           </clipPath>
         </defs>
       </svg>
-    </button>
+    </a>
   );
 }

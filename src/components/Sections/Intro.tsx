@@ -5,7 +5,7 @@ import yellowTwo from "@/assets/main/maple/yellow_two.svg";
 
 export default function Intro() {
   return (
-    <section className="w-full">
+    <section id="intro" className="section-target w-full">
       <div className="relative w-full h-[calc(687*var(--px))] bg-brand-yellow-300">
         <Image
           src={book}
