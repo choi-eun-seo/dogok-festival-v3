@@ -1,3 +1,4 @@
+import greenLeaf from "@/assets/main/maple/green-sm.svg";
 import Image from "next/image";
 import { market as marketData } from "@/app/app.const";
 import person from "@/assets/main/person.svg";
@@ -46,6 +47,16 @@ export default function Market() {
       <Image src={group3} alt="" className="absolute bottom-20 right-0 w-[calc(133*var(--px))] mr-[calc(483*var(--px))]  z-30" />
       <Image src={group4} alt="" className="absolute bottom-20 right-0 w-[calc(176*var(--px))] mr-[calc(277*var(--px))]  z-30" />
 
+      <Image
+        src={greenLeaf}
+        alt=""
+        className="animate-maple maple-delay-1 pointer-events-none absolute left-[calc(1625*var(--px))] top-[calc(555*var(--px))] z-30 h-auto w-[calc(35*var(--px))] "
+      />
+      <Image
+        src={greenLeaf}
+        alt=""
+        className="animate-maple maple-delay-2 maple-reverse pointer-events-none absolute left-[calc(644*var(--px))] top-[calc(930*var(--px))] z-30 h-auto w-[calc(42*var(--px))] rotate-[35deg]"
+      />
     </section>
   );
 }

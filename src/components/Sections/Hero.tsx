@@ -148,6 +148,12 @@ export default function Hero() {
           src={smStar}
           alt=""
           priority
+          className="animate-star-small absolute top-[calc(301*var(--px))] left-0 z-10 h-auto w-[calc(28*var(--px))] ml-[calc(241*var(--px))]"
+        />
+        <Image
+          src={smStar}
+          alt=""
+          priority
           className="animate-star-small star-delay-one absolute top-[calc(353*var(--px))] right-0 z-10 mr-[calc(265*var(--px))] h-auto w-[calc(45*var(--px))]"
         />
         <Image

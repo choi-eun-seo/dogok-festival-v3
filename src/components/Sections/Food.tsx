@@ -1,3 +1,4 @@
+import yellowLeaf from "@/assets/main/maple/yellow_two.svg";
 import OpenBook from "@/components/OpenBook";
 import food from "@/assets/program/food/food.svg";
 import carPink from "@/assets/program/food/car-pink.svg";
@@ -87,6 +88,11 @@ export default function Food() {
         src={food_group}
         alt=""
         className="absolute top-[calc(875*var(--px))] z-40 left-0 w-[calc(217*var(--px))] h-auto ml-[calc(1487*var(--px))]"
+      />
+      <Image
+        src={yellowLeaf}
+        alt=""
+        className="animate-maple maple-delay-1 pointer-events-none absolute left-[calc(1280*var(--px))] top-[calc(-20*var(--px))] z-30 h-auto w-[calc(80*var(--px))] -rotate-[20deg]"
       />
     </section>
   );

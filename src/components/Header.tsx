@@ -5,7 +5,7 @@ const menus = [
   { href: "#", label: "행사 소개" },
   { href: "#map", label: "행사장 지도" },
   { href: "#program", label: "프로그램 소개" },
-  { href: "#visit", label: "오시는 길" },
+  { href: "#outro", label: "오시는 길" },
 ];
 
 export default function Header() {

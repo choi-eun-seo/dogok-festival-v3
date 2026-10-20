@@ -1,5 +1,7 @@
 "use client";
 
+import redLeaf from "@/assets/main/maple/sm.svg";
+import yellowLeaf from "@/assets/main/maple/yellow_two.svg";
 import Image from "next/image";
 import { useLayoutEffect, useRef } from "react";
 import { play as playData } from "@/app/app.const";
@@ -134,6 +136,16 @@ export default function Play() {
         className="absolute bottom-65 right-0 w-[calc(428*var(--px))] mr-[calc(238*var(--px))]  z-50"
       />
 
+      <Image
+        src={redLeaf}
+        alt=""
+        className="animate-maple maple-delay-1 pointer-events-none absolute left-[calc(245*var(--px))] top-[calc(535*var(--px))] z-30 h-auto w-[calc(35*var(--px))] "
+      />
+      <Image
+        src={yellowLeaf}
+        alt=""
+        className="animate-maple maple-delay-2 maple-reverse pointer-events-none absolute left-[calc(1605*var(--px))] top-[calc(555*var(--px))] z-30 h-auto w-[calc(70*var(--px))] rotate-[15deg]"
+      />
     </section>
   );
 }

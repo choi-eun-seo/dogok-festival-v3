@@ -5,6 +5,8 @@ import Program from "@/components/Sections/Program";
 import Market from "@/components/Sections/Market";
 import Play from "@/components/Sections/Play";
 import Food from "@/components/Sections/Food";
+import Music from "@/components/Sections/Music";
+import Healing from "@/components/Sections/Healing";
 import Outro from "@/components/Sections/Outro";
 
 export default function Home() {
@@ -18,6 +20,8 @@ export default function Home() {
         <Market />
         <Play />
         <Food />
+        <Music />
+        <Healing />
 
         <Outro />
       </main>

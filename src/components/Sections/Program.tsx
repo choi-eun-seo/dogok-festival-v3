@@ -7,7 +7,7 @@ import sun from "@/assets/program/sun.svg";
 import cloud from "@/assets/main/cloud.svg";
 import cloudBlue from "@/assets/program/cloud-blue-line.svg";
 import bird from "@/assets/main/bird.svg";
-import map from "@/assets/program/map.png";
+import map from "@/assets/main/map2.png";
 import bg from "@/assets/program/program_bg.png";
 import tree1 from "@/assets/main/tree/tree1.svg";
 import tree2 from "@/assets/main/tree/tree2.svg";
@@ -229,9 +229,13 @@ export default function Program() {
           className="absolute top-[calc(1936*var(--px))] left-0 h-auto w-full"
         />
       </div>
-      <div className="absolute ml-[calc(712*var(--px))] top-[calc(1208*var(--px))] left-0 object-cover rounded-[calc(99*var(--px))] bg-brand-blue-500 text-white text-center font-suit text-[calc(30*var(--px))] font-bold py-[calc(22*var(--px))] px-[calc(140*var(--px))]">
+      <a
+        href={map.src}
+        download="도곡-메타세쿼이아-로드-페스타-행사장-지도.png"
+        className="absolute z-20 ml-[calc(712*var(--px))] top-[calc(1208*var(--px))] left-0 object-cover rounded-[calc(99*var(--px))] bg-brand-blue-500 text-white text-center font-suit text-[calc(30*var(--px))] font-bold py-[calc(22*var(--px))] px-[calc(140*var(--px))]"
+      >
         이미지로 저장하기
-      </div>
+      </a>
       <Image
         id="program"
         src={bookshelf}
