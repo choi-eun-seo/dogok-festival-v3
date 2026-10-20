@@ -3,6 +3,9 @@ import food from "@/assets/program/food/food.svg";
 import carPink from "@/assets/program/food/car-pink.svg";
 import Image from "next/image";
 import { food_1, food_2 } from "@/app/app.const";
+import car from "@/assets/main/car.svg";
+import girl from "@/assets/program/food/girl2.svg";
+import food_group from "@/assets/program/food/food_group.svg";
 
 export default function Food() {
   return (
@@ -41,35 +44,50 @@ export default function Food() {
           className="absolute left-0 h-auto w-[calc(1185*var(--px))]"
         />
       </div>
-      <div className="flex flex-row">
-        <div className="z-40 grid grid-cols-2 gap-[calc(12*var(--px))] ml-[calc(56*var(--px))] mt-[calc(324*var(--px))]">
+      <div className="flex flex-row ml-[calc(562*var(--px))] mt-[calc(124*var(--px))] gap-[calc(60*var(--px))]">
+        <div className="z-40 grid grid-cols-2 gap-x-[calc(12*var(--px))] gap-y-[calc(12*var(--px))]">
           {food_1.map((item) => (
             <div
               key={item.name}
-              className="bg-[#E9F7FF] rounded-[calc(10*var(--px))] py-[calc(20*var(--px))] w-[calc(180*var(--px))]"
+              className="flex h-[calc(97*var(--px))] bg-[#E9F7FF] rounded-[calc(10*var(--px))] py-[calc(20*var(--px))] w-[calc(180*var(--px))] items-center justify-center"
             >
-              <p className="text-brand-brown-700 text-center font-suit text-[calc(14*var(--px))] font-medium">
+              <p className="text-brand-brown-700 text-center font-suit text-[calc(20*var(--px))] font-bold">
                 {item.name}
               </p>
             </div>
           ))}
         </div>
-        <div className="z-40 grid grid-cols-2 gap-[calc(12*var(--px))] ml-[calc(994*var(--px))] mt-[calc(324*var(--px))]">
+        <div className="z-40 grid grid-cols-2 grid-rows-[repeat(3,calc(97*var(--px)))] items-start gap-x-[calc(12*var(--px))] gap-y-[calc(12*var(--px))]">
           {food_2.map((item) => (
             <div
               key={item.name}
-              className="h-[calc(97*var(--px))] w-[calc(180*var(--px))] bg-[#E9F7FF] rounded-[calc(10*var(--px))] py-[calc(20*var(--px))] w-[calc(180*var(--px))]"
+              className="h-[calc(97*var(--px))] bg-[#E9F7FF] rounded-[calc(10*var(--px))] py-[calc(20*var(--px))] w-[calc(180*var(--px))]"
             >
-              <p className="text-brand-brown-700 text-center font-suit text-[calc(14*var(--px))] font-medium">
+              <p className="text-brand-brown-700 text-center font-suit text-[calc(14*var(--px))] font-bold text-[calc(20*var(--px))]">
                 {item.name}
               </p>
-              <div className="mx-auto w-fit rounded-[calc(4*var(--px))] bg-[#FFAB23] px-[calc(6*var(--px))] py-[calc(2*var(--px))] text-center font-suit text-[calc(12*var(--px))] font-medium text-white mt-[calc(6*var(--px))]">
+              <div className="mx-auto w-fit rounded-[calc(4*var(--px))] bg-[#67C7FA] px-[calc(6*var(--px))] py-[calc(2*var(--px))] text-center font-suit text-[calc(12*var(--px))] font-medium text-white mt-[calc(6*var(--px))]">
                 {item.tag}
               </div>
             </div>
           ))}
         </div>
       </div>
+      <Image
+        src={car}
+        alt=""
+        className="absolute top-[calc(740*var(--px))] z-40 left-0 w-[calc(250*var(--px))] h-auto ml-[calc(266*var(--px))]"
+      />
+      <Image
+        src={girl}
+        alt=""
+        className="absolute top-[calc(880*var(--px))] z-40 left-0 w-[calc(93*var(--px))] h-auto ml-[calc(763*var(--px))]"
+      />
+      <Image
+        src={food_group}
+        alt=""
+        className="absolute top-[calc(875*var(--px))] z-40 left-0 w-[calc(217*var(--px))] h-auto ml-[calc(1487*var(--px))]"
+      />
     </section>
   );
 }
