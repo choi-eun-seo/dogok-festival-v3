@@ -280,15 +280,25 @@
   }
   #map { --px: calc(100vw / 1280); width: calc(1920 * var(--px)); margin-left: calc(-320 * var(--px)); position: relative; z-index: 15; overflow: hidden; }
   #map > div:first-child > p { font-size: calc(20 * var(--mobile-px)); }
-  #map > a[download] { min-height: 44px; display: grid; place-items: center; font-size: calc(12 * var(--mobile-px)); padding-block: calc(8 * var(--mobile-px)); }
+  /* padding/font 모두 --mobile-px — 고정 min-height·(--px) 가로패딩 섞이면 축소 시 뚱뚱해짐 */
+  #map > a[download] {
+    display: grid;
+    place-items: center;
+    min-height: 0;
+    font-size: calc(14 * var(--mobile-px));
+    line-height: 1.2;
+    padding: calc(10 * var(--mobile-px)) calc(28 * var(--mobile-px));
+    border-radius: calc(99 * var(--mobile-px));
+  }
 
   /*
-    저장 버튼(top 1250·px, 높이 44px)과 언덕 사이 = 302 (360 기준).
+    저장 버튼(top 1250·px)과 언덕 사이 간격 유지.
     언덕·배경·책장·길은 같은 만큼 아래로 이동.
   */
   #map {
+    --program-save-btn-h: calc(34 * var(--mobile-px));
     --program-save-top: calc(1250 * var(--px));
-    --program-hills-top: calc(var(--program-save-top) + 44px + 242 * var(--mobile-px));
+    --program-hills-top: calc(var(--program-save-top) + var(--program-save-btn-h) + 242 * var(--mobile-px));
     --program-shift: calc(var(--program-hills-top) - 1360 * var(--px));
   }
   #map > div:first-child {
