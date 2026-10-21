@@ -77,27 +77,27 @@ export const market = [
     },
     {
         name: "오후의 산보",
-        tag: "도자기, 스티커"
+        tag: "엽서, 메모지"
     },
     {
         name: "파도해 작업실",
-        tag: "도자기, 스티커"
+        tag: "엽서, 메모지, 스티커"
     },
     {
         name: "The fleur de sel",
-        tag: "도자기, 스티커"
+        tag: "엽서, 메모지, 스티커"
     },
     {
-        name: "꿀꿀스토어(애견의류)",
-        tag: "도자기, 스티커"
+        name: "꿀꿀스토어",
+        tag: "애견의류"
     },
     {
         name: "큐리오브제",
-        tag: "도자기, 스티커"
+        tag: "도자오브제"
     },
     {
-        name: "컨베이지(CONVEY.G)",
-        tag: "도자기, 스티커"
+        name: "컨베이지",
+        tag: "디퓨저, 드레스퍼퓸"
     },
     {
         name: "아름다운 인연",
@@ -105,7 +105,7 @@ export const market = [
     },
     {
         name: "Good&Faithful",
-        tag: "도자기, 스티커"
+        tag: "수제카드, 뜨개소품"
     },
 
 ]

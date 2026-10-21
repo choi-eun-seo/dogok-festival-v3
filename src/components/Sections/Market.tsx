@@ -28,20 +28,26 @@ export default function Market() {
           className="absolute left-0 h-auto w-[calc(1185*var(--px))]"
         />
       </div>
-      <div className="chapter-grid absolute scroll-snap-y-mandatory z-40 grid grid-cols-5 gap-[calc(12*var(--px))] ml-[calc(486*var(--px))] mt-[calc(40*var(--px))]">
-        {marketData.map((item) => (
-          <div
-            key={item.name}
-            className="bg-[#FFF3D4] rounded-[calc(10*var(--px))] py-[calc(20*var(--px))] w-[calc(180*var(--px))]"
-          >
-            <p className="whitespace-pre-line text-brand-brown-700 text-center font-suit text-[calc(20*var(--px))] font-bold">
-              {item.name}
-            </p>
-            <div className="mx-auto w-fit rounded-[calc(4*var(--px))] bg-[#FFAB23] px-[calc(6*var(--px))] py-[calc(2*var(--px))] text-center font-suit text-[calc(12*var(--px))] font-medium text-white mt-[calc(6*var(--px))]">
-              {item.tag}
+      <div
+        aria-label="플리마켓 부스 목록"
+        tabIndex={0}
+        className="chapter-grid absolute z-40 ml-[calc(486*var(--px))] mt-[calc(40*var(--px))] w-[calc(948*var(--px))] snap-x snap-proximity overflow-x-auto overflow-y-hidden"
+      >
+        <div className="grid w-max grid-flow-col grid-rows-4 gap-[calc(12*var(--px))]">
+          {marketData.map((item) => (
+            <div
+              key={item.name}
+              className="snap-start bg-[#FFF3D4] rounded-[calc(10*var(--px))] py-[calc(20*var(--px))] w-[calc(180*var(--px))] max-h-[calc(97*var(--px))]"
+            >
+              <p className="whitespace-pre-line text-brand-brown-700 text-center font-suit text-[calc(20*var(--px))] font-bold">
+                {item.name}
+              </p>
+              <div className="mx-auto w-fit rounded-[calc(4*var(--px))] bg-[#FFAB23] px-[calc(6*var(--px))] py-[calc(2*var(--px))] text-center font-suit text-[calc(12*var(--px))] font-medium text-white mt-[calc(6*var(--px))]">
+                {item.tag}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
       <Image src={person} alt="" className="absolute bottom-30 left-0 w-[calc(284*var(--px))] ml-[calc(268*var(--px))]  z-40" />
       <Image src={group3} alt="" className="absolute bottom-20 right-0 w-[calc(133*var(--px))] mr-[calc(483*var(--px))]  z-30" />

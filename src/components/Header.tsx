@@ -11,19 +11,20 @@ const menus = [
 export default function Header() {
   return (
     <header className="site-header fixed top-0 left-0 right-0 z-100 bg-brand-brown-500">
-      <div className="site-header-inner flex w-full px-[calc(192*var(--px))] flex-row items-center pt-[calc(26*var(--px))] pb-[calc(23*var(--px))]">
+      <div className="site-header-inner flex h-[var(--header-h)] w-full flex-row items-center px-[calc(192*var(--px))]">
         <a href="#hero">
           <Image
             src={logo}
             alt="logo"
-            width={440}
-            height={41}
-            className="site-header-logo h-auto w-[calc(440*var(--px))]"
+            width={480}
+            height={45}
+            priority
+            className="site-header-logo h-auto w-[calc(480*var(--px))]"
           />
         </a>
-        <nav className="ml-auto flex flex-row items-center font-suit text-white text-[length:calc(30*var(--px))] gap-[calc(30*var(--px))]">
+        <nav className="ml-auto flex flex-row items-center gap-[calc(36*var(--px))] font-suit text-[length:calc(24*var(--px))] text-white">
           {menus.map((menu) => (
-            <a key={menu.href} href={menu.href} className="text-base font-bold">
+            <a key={menu.href} href={menu.href} className="font-bold">
               {menu.label}
             </a>
           ))}

@@ -14,11 +14,11 @@ import sing from "@/assets/sing.svg";
 const schedule = [
   ["12:00~12:30", "코지재즈오피스", ""],
   ["12:30~13:00", "목일", ""],
-  ["13:30~14:00", "", "매직&벌룬쇼"],
+  ["13:30~14:00", "", "벌룬매직쇼"],
   ["14:00~14:30", "개막식", ""],
   ["14:30~15:00", "장의현 퀄텟", ""],
   ["15:15~15:45", "015B", ""],
-  ["16:00~16:30", "매직&벌룬쇼", ""],
+  ["16:00~16:30", "벌룬매직쇼", ""],
   ["16:30~17:00", "첼로가 노래하는 진스", ""],
 ];
 
@@ -71,7 +71,11 @@ export default function Music() {
                   >
                     {time}
                   </th>
-                  <td className="p-0 align-middle text-[calc(20*var(--px))] font-bold font-suit">
+                  <td
+                    className={`p-0 align-middle text-[calc(20*var(--px))] font-bold font-suit ${
+                      main === "벌룬매직쇼" ? "bg-[#F3F5FF]" : "bg-white"
+                    }`}
+                  >
                     {main || ""}
                   </td>
                   <td

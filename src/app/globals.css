@@ -42,8 +42,8 @@
   --design-mo: 360;
   --design-pc: 1920;
   --px: calc(100vw / var(--design-mo));
-  /* 헤더: 위 26 + 로고 41 + 아래 23 */
-  --header-h: calc(90 * var(--px));
+  /* 헤더: 위 38 + 로고 45 + 아래 37 */
+  --header-h: calc(100 * var(--px));
 }
 
 @theme inline {

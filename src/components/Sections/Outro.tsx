@@ -27,7 +27,7 @@ const gangnamWaterworksDirections =
 
 export default function Outro() {
   return (
-    <section id="outro">
+    <section id="outro" className="section-target">
       <div className="directions-panel relative bg-brand-yellow-300">
         <BrownStar className="top-[calc(95.5*var(--px))] left-[calc(823*var(--px))]" />
         <BrownStar className="top-[calc(95.5*var(--px))] right-[calc(822*var(--px))]" />

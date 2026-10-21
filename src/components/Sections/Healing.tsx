@@ -77,7 +77,7 @@ export default function Healing() {
       </BookChapter>
       <div aria-label="힐링 프로그램" tabIndex={0} className="healing-cards absolute top-[calc(264.5*var(--px))] left-[calc((366+142)*var(--px))] z-10 w-[calc(912*var(--px))] snap-x snap-proximity overflow-x-auto overflow-y-hidden font-suit">
         <div className="flex w-max gap-[calc(16*var(--px))]">
-          <article className="flex w-[calc(400*var(--px))] shrink-0 snap-start min-h-[calc(390*var(--px))] flex-col items-center rounded-[calc(12*var(--px))] bg-[#FFF5E0] px-[calc(25*var(--px))] py-[calc(30*var(--px))] text-center">
+          <article className="flex w-[calc(430*var(--px))] shrink-0 snap-start min-h-[calc(390*var(--px))] flex-col items-center rounded-[calc(12*var(--px))] bg-[#FFF5E0] px-[calc(25*var(--px))] py-[calc(30*var(--px))] text-center">
             <ArticleTitle>야외도서관</ArticleTitle>
             <div
               aria-hidden="true"
@@ -89,13 +89,13 @@ export default function Healing() {
                 className="absolute inset-x-0 top-0 h-auto w-full"
               />
             </div>
-            <p className="mt-auto text-[calc(16*var(--px))] leading-relaxed">
+            <p className="mt-[calc(10*var(--px))] text-[calc(16*var(--px))] leading-relaxed">
               책과 함께 쉬어가는 시간
               <br />
               나만의 가을을 읽어보세요.
             </p>
           </article>
-          <article className="flex w-[calc(400*var(--px))] shrink-0 snap-start min-h-[calc(390*var(--px))] flex-col rounded-[calc(12*var(--px))] bg-[#FFF5E0] px-[calc(25*var(--px))] py-[calc(30*var(--px))]">
+          <article className="flex w-[calc(430*var(--px))] shrink-0 snap-start min-h-[calc(390*var(--px))] flex-col rounded-[calc(12*var(--px))] bg-[#FFF5E0] px-[calc(25*var(--px))] py-[calc(30*var(--px))]">
             <ArticleTitle>어린이 백일장</ArticleTitle>
             <dl className="my-[calc(28*var(--px))] flex flex-col gap-[calc(14*var(--px))] font-bold text-[calc(14*var(--px))] leading-relaxed">
               {writingContest.map(({ label, value }) => (
@@ -113,7 +113,7 @@ export default function Healing() {
               ))}
             </dl>
             <div className="-mt-[calc(20*var(--px))] mb-[calc(10*var(--px))] text-[calc(12*var(--px))] font-medium leading-relaxed text-[#9A8676]">
-              <p>주최·주관 | 지구불시착, 아인북스, 책방뚝 독립서점</p>
+              <p>주최·주관 | 아인서점 지구불시착 책방뚝</p>
             </div>
             <a
               href="https://docs.google.com/forms/d/1N-Y_ozLPh3jO5VSUupoGjGuXqLfv1-rCpzWN1Bkyk0A/edit"
@@ -125,7 +125,7 @@ export default function Healing() {
               </p>
             </a>
           </article>
-          <article className="relative flex w-[calc(400*var(--px))] shrink-0 snap-start min-h-[calc(390*var(--px))] flex-col items-center rounded-[calc(12*var(--px))] bg-[#FFF5E0] px-[calc(25*var(--px))] py-[calc(30*var(--px))] text-center">
+          <article className="relative flex w-[calc(430*var(--px))] shrink-0 snap-start min-h-[calc(390*var(--px))] flex-col items-center rounded-[calc(12*var(--px))] bg-[#FFF5E0] px-[calc(0*var(--px))] py-[calc(30*var(--px))] text-center">
             <Image
               src={animalForest}
               alt=""
