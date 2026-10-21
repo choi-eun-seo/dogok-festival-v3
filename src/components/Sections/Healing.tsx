@@ -137,12 +137,17 @@ export default function Healing() {
       <Image
         src={boy}
         alt=""
-        className="absolute bottom-[calc(150*var(--px))] w-[calc(375*var(--px))] h-auto left-[calc(276*var(--px))]"
+        className="absolute bottom-[calc(150*var(--px))] w-[calc(375*var(--px))] h-auto left-[calc(276*var(--px))] max-pc:w-[calc(157*var(--mobile-px))] max-pc:left-[calc(20*var(--mobile-px))] max-pc:bottom-[calc(220*var(--mobile-px))]"
       />
       <Image
         src={bag}
         alt=""
-        className="absolute bottom-[calc(150*var(--px))] w-[calc(194*var(--px))] h-auto left-[calc(1468*var(--px))]"
+        className="absolute bottom-[calc(150*var(--px))] w-[calc(194*var(--px))] h-auto left-[calc(1468*var(--px))] max-pc:w-[calc(97*var(--mobile-px))] max-pc:left-[calc(230*var(--mobile-px))] max-pc:bottom-[calc(150*var(--mobile-px))]"
+      />
+      <Image
+        src={yellowMaple}
+        alt=""
+        className="animate-maple maple-delay-1 pointer-events-none absolute pc:hidden max-pc:w-[calc(27*var(--mobile-px))] max-pc:right-[calc(260*var(--mobile-px))] max-pc:bottom-[calc(100*var(--mobile-px))]"
       />
     </div>
   );

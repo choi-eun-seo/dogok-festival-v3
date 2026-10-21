@@ -98,7 +98,7 @@ export default function Music() {
         <Image
           src={guitar}
           alt=""
-          className="pointer-events-none absolute right-[calc(70*var(--px))] top-[calc(730*var(--px))] h-auto w-[calc(110*var(--px))]"
+          className="pointer-events-none absolute right-[calc(70*var(--px))] top-[calc(730*var(--px))] h-auto w-[calc(110*var(--px))] max-pc:w-[calc(40*var(--mobile-px))] max-pc:right-[calc(30*var(--mobile-px))] max-pc:top-[calc(600*var(--mobile-px))]"
         />
         <Image
           src={note}
@@ -111,38 +111,38 @@ export default function Music() {
         <Image
           src={maple}
           alt=""
-          className="animate-maple pointer-events-none absolute left-0 -top-[calc(15*var(--px))] ml-[calc((488-366)*var(--px))] h-auto w-[calc(60*var(--px))]"
+          className="animate-maple pointer-events-none absolute left-0 z-50 -top-[calc(15*var(--px))] ml-[calc((488-366)*var(--px))] h-auto w-[calc(60*var(--px))] max-pc:w-[calc(40*var(--mobile-px))] max-pc:left-[calc(12*var(--mobile-px))] max-pc:top-[calc(-20*var(--mobile-px))]"
         />
       </BookChapter>
       <Image
         src={musicSm2}
         alt=""
-        className="animate-note note-delay-1 pointer-events-none absolute right-[calc(289*var(--px))] top-[calc(542*var(--px))] h-auto w-[calc(27*var(--px))]"
+        className="animate-note note-delay-1 pointer-events-none absolute right-[calc(289*var(--px))] top-[calc(542*var(--px))] z-20 h-auto w-[calc(27*var(--px))] max-pc:w-[calc(13*var(--mobile-px))] max-pc:right-[calc(10*var(--mobile-px))] max-pc:top-[calc(690*var(--mobile-px))]"
       />
       <Image
         src={music}
         alt=""
-        className="animate-note pointer-events-none absolute left-[calc(257*var(--px))] top-[calc(542*var(--px))] h-auto w-[calc(42*var(--px))]"
+        className="animate-note pointer-events-none absolute left-[calc(257*var(--px))] top-[calc(542*var(--px))] z-20 h-auto w-[calc(42*var(--px))] max-pc:left-auto max-pc:w-[calc(20*var(--mobile-px))] max-pc:right-[calc(100*var(--mobile-px))] max-pc:top-[calc(625*var(--mobile-px))]"
       />
       <Image
         src={speaker}
         alt=""
-        className="pointer-events-none absolute left-0 top-[calc(710*var(--px))] z-10 h-auto w-[calc(88*var(--px))] ml-[calc(202*var(--px))]"
+        className="pointer-events-none absolute left-0 top-[calc(710*var(--px))] z-10 h-auto w-[calc(88*var(--px))] ml-[calc(202*var(--px))] max-pc:w-[calc(30*var(--mobile-px))] max-pc:ml-[calc(30*var(--mobile-px))] max-pc:top-[calc(550*var(--mobile-px))]"
       />
       <Image
         src={speaker}
         alt=""
-        className="pointer-events-none absolute right-0 top-[calc(710*var(--px))] z-10 h-auto w-[calc(88*var(--px))] mr-[calc(217*var(--px))]"
+        className="pointer-events-none absolute right-0 top-[calc(710*var(--px))] z-10 h-auto w-[calc(88*var(--px))] mr-[calc(217*var(--px))] max-pc:hidden"
       />
       <Image
         src={mik}
         alt=""
-        className="absolute bottom-[calc(150*var(--px))] w-[calc(32*var(--px))] h-auto left-[calc(340*var(--px))]"
+        className="absolute bottom-[calc(150*var(--px))] w-[calc(32*var(--px))] h-auto left-[calc(340*var(--px))] max-pc:w-[calc(12*var(--mobile-px))] max-pc:left-[calc(105*var(--mobile-px))] max-pc:bottom-[calc(130*var(--mobile-px))]"
       />
       <Image
         src={sing}
         alt=""
-        className="absolute bottom-[calc(200*var(--px))] left-[calc(430*var(--px))] h-auto w-[calc(118*var(--px))]"
+        className="absolute bottom-[calc(200*var(--px))] left-[calc(430*var(--px))] h-auto w-[calc(118*var(--px))] max-pc:w-[calc(40*var(--mobile-px))] max-pc:left-[calc(160*var(--mobile-px))] max-pc:bottom-[calc(160*var(--mobile-px))]"
       />
     </div>
   );

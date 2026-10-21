@@ -95,12 +95,12 @@ export default function Food() {
       <Image
         src={car}
         alt=""
-        className="absolute top-[calc(740*var(--px))] z-40 left-0 w-[calc(250*var(--px))] h-auto ml-[calc(266*var(--px))]"
+        className="absolute top-[calc(740*var(--px))] z-40 left-0 w-[calc(250*var(--px))] h-auto ml-[calc(266*var(--px))] max-pc:w-[calc(90*var(--mobile-px))] max-pc:ml-[calc(53*var(--mobile-px))] max-pc:top-[calc(750*var(--mobile-px))]"
       />
       <Image
         src={girl}
         alt=""
-        className="absolute top-[calc(880*var(--px))] z-40 left-0 w-[calc(93*var(--px))] h-auto ml-[calc(763*var(--px))]"
+        className="absolute top-[calc(880*var(--px))] z-40 left-0 w-[calc(93*var(--px))] h-auto ml-[calc(763*var(--px))] max-pc:w-[calc(45*var(--mobile-px))] max-pc:ml-[calc(280*var(--mobile-px))] max-pc:top-[calc(600*var(--mobile-px))]"
       />
       <Image
         src={food_group}

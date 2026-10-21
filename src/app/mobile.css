@@ -47,7 +47,7 @@
   /* The mobile market book is taller than the desktop SVG's natural ratio. */
   #market {
     box-sizing: border-box;
-    min-height: calc(784 * var(--mobile-px));
+    min-height: calc(900 * var(--mobile-px));
   }
   #market .chapter-paper {
     width: calc(620.82 * var(--mobile-px));
@@ -63,17 +63,7 @@
     margin-right: 0;
     padding-right: 0;
   }
-  #market > img:nth-of-type(1) {
-    top: calc(490 * var(--mobile-px));
-    bottom: auto;
-    left: calc(14 * var(--mobile-px));
-    margin-left: 0;
-    width: calc(125 * var(--mobile-px));
-  }
-  #market > img:nth-of-type(2), #market > img:nth-of-type(3) {
-    top: calc(610 * var(--mobile-px));
-    bottom: auto;
-  }
+  /* #market 장식 top/bottom은 className max-pc: 쓰도록 CSS에서 강제하지 않음 */
   .chapter-paper > svg > g > path:nth-last-child(-n+2),
   .chapter-page > svg > g > path:nth-last-child(-n+2) { display: none; }
   .chapter-grid {
@@ -119,13 +109,24 @@
     border-radius: calc(3 * var(--mobile-px));
     overflow-wrap: anywhere;
   }
-  .mobile-chapter > img:not(.animate-maple) { top: auto; bottom: calc(20 * var(--mobile-px)); }
-  .mobile-chapter > img.animate-maple { top: auto; bottom: calc(64 * var(--mobile-px)); }
-  #play > img:not(.animate-maple) { bottom: calc(14 * var(--mobile-px)); }
+  /* #play / #market / #food 장식은 className max-pc: 쓰도록 강제 top/bottom 제외 */
+  .mobile-chapter:not(#play):not(#market):not(#food) > img:not(.animate-maple) {
+    top: auto;
+    bottom: calc(20 * var(--mobile-px));
+  }
+  .mobile-chapter:not(#play):not(#market):not(#food) > img.animate-maple {
+    top: auto;
+    bottom: calc(64 * var(--mobile-px));
+  }
+  #food > img:not(.animate-maple),
+  .music-scene > img:not(.animate-note) {
+    transform: scale(1.65);
+    transform-origin: bottom center;
+  }
   .food-grids { display: none; }
   #food {
     box-sizing: border-box;
-    min-height: calc(700 * var(--mobile-px));
+    min-height: calc(900 * var(--mobile-px));
   }
   #food .chapter-paper { height: var(--mobile-book-height); }
   #food .chapter-paper > svg { height: 100%; }
@@ -177,7 +178,18 @@
   }
   #play {
     box-sizing: border-box;
-    min-height: calc(700 * var(--mobile-px));
+    min-height: calc(900 * var(--mobile-px));
+  }
+  /* 단풍이 위 섹션(Play/Food) 배경 위로 삐져나오게 */
+  .music-scene {
+    z-index: 40;
+  }
+  #music.book-chapter {
+    min-height: calc(800 * var(--mobile-px));
+    overflow: visible;
+  }
+  #music .chapter-page {
+    overflow: visible;
   }
   .chapter-page {
     min-height: var(--mobile-book-height);
@@ -216,17 +228,20 @@
   }
   .music-schedule thead th { height: calc(27.9 * var(--mobile-px)); }
   .performer-tag { display: none; }
-  .music-scene > img { top: auto; bottom: calc(25 * var(--mobile-px)); }
-  #music .chapter-page > img:not(.performer-tag):not(.animate-maple) { top: auto; bottom: 0; right: calc(12 * var(--mobile-px)); }
+  /* .music-scene > img top/bottom은 className max-pc: 쓰도록 강제하지 않음 */
+  /* #music chapter-page 장식(기타 등) top/right는 className max-pc: 쓰도록 강제하지 않음 */
   .healing-scene { background: var(--brand-green-300); }
-  #healing { padding-bottom: calc(105 * var(--mobile-px)); }
+  #healing {
+    min-height: calc(900 * var(--mobile-px));
+    padding-bottom: calc(105 * var(--mobile-px));
+  }
   #healing .chapter-page { height: var(--mobile-book-height); }
   #healing h2 { font-size: calc(19 * var(--mobile-px)); }
   .healing-cards { --px: calc(0.64 * var(--mobile-px)); top: calc(120 * var(--mobile-px)); left: calc(32 * var(--mobile-px)); width: calc(296 * var(--mobile-px)); padding-bottom: calc(12 * var(--mobile-px)); scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: #A86537 #FFF5E0; }
   .healing-cards article { min-height: calc(400 * var(--px)); }
   .healing-cards a { display: block; margin-top: auto; }
   .healing-cards a p { min-height: 44px; display: grid; place-items: center; }
-  .healing-scene > img { bottom: calc(30 * var(--mobile-px)); }
+  /* .healing-scene > img bottom은 className max-pc: 쓰도록 강제하지 않음 */
   .directions-panel { padding: calc(40 * var(--mobile-px)) calc(20 * var(--mobile-px)); }
   .directions-panel > svg { display: none; }
   .directions-panel > p { padding-top: 0; font-size: calc(22 * var(--mobile-px)); }

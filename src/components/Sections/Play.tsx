@@ -130,12 +130,12 @@ export default function Play() {
       <Image
         src={market}
         alt=""
-        className="absolute bottom-80 left-0 w-[calc(331*var(--px))] ml-[calc(254*var(--px))]  z-50"
+        className="absolute bottom-80 left-0 z-50 w-[calc(331*var(--px))] ml-[calc(254*var(--px))] max-pc:w-[calc(167*var(--mobile-px))] max-pc:bottom-[calc(240*var(--mobile-px))] max-pc:ml-[calc(22*var(--mobile-px))]"
       />
       <Image
         src={draw}
         alt=""
-        className="absolute bottom-65 right-0 w-[calc(428*var(--px))] mr-[calc(238*var(--px))]  z-50"
+        className="absolute bottom-65 right-0 w-[calc(428*var(--px))] mr-[calc(438*var(--px))]  z-50 max-pc:w-[calc(143*var(--mobile-px))] max-pc:bottom-[calc(80*var(--mobile-px))] max-pc:mr-[calc(10*var(--mobile-px))]"
       />
 
       <Image
@@ -146,7 +146,7 @@ export default function Play() {
       <Image
         src={yellowLeaf}
         alt=""
-        className="animate-maple maple-delay-2 maple-reverse pointer-events-none absolute left-[calc(1605*var(--px))] top-[calc(555*var(--px))] z-30 h-auto w-[calc(70*var(--px))] rotate-[15deg]"
+        className="animate-maple maple-delay-2 maple-reverse pointer-events-none absolute left-[calc(1605*var(--px))] top-[calc(555*var(--px))] z-30 h-auto w-[calc(70*var(--px))] rotate-[15deg] max-pc:left-[calc(12*var(--mobile-px))] max-pc:right-auto max-pc:top-auto max-pc:bottom-[calc(42*var(--mobile-px))] max-pc:w-[calc(38*var(--mobile-px))]"
       />
     </section>
   );

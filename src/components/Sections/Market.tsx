@@ -54,19 +54,19 @@ export default function Market() {
           ))}
         </div>
       </div>
-      <Image src={person} alt="" className="absolute bottom-30 left-0 w-[calc(284*var(--px))] ml-[calc(268*var(--px))]  z-40" />
-      <Image src={group3} alt="" className="absolute bottom-20 right-0 w-[calc(133*var(--px))] mr-[calc(483*var(--px))]  z-30" />
-      <Image src={group4} alt="" className="absolute bottom-20 right-0 w-[calc(176*var(--px))] mr-[calc(277*var(--px))]  z-30" />
+      <Image src={person} alt="" className="absolute bottom-30 left-0 w-[calc(284*var(--px))] ml-[calc(268*var(--px))]  z-40 max-pc:w-[calc(142*var(--mobile-px))] max-pc:bottom-[calc(250*var(--mobile-px))] max-pc:ml-[calc(44*var(--mobile-px))]" />
+      <Image src={group3} alt="" className="absolute bottom-20 right-0 w-[calc(133*var(--px))] mr-[calc(483*var(--px))]  z-30 max-pc:w-[calc(233*var(--px))] max-pc:mr-[calc(583*var(--px))] max-pc:mt-[calc(500*var(--px))]" />
+      <Image src={group4} alt="" className="absolute bottom-20 right-0 w-[calc(176*var(--px))] mr-[calc(277*var(--px))]  z-30 max-pc:w-[calc(336*var(--px))] max-pc:mr-[calc(160*var(--px))] max-pc:mt-[calc(400*var(--px))]" />
 
       <Image
         src={greenLeaf}
         alt=""
-        className="animate-maple maple-delay-1 pointer-events-none absolute left-[calc(1625*var(--px))] top-[calc(555*var(--px))] z-30 h-auto w-[calc(35*var(--px))] "
+        className="animate-maple maple-delay-1 pointer-events-none absolute left-[calc(1625*var(--px))] top-[calc(555*var(--px))] z-30 h-auto w-[calc(35*var(--px))] max-pc:left-[calc(42*var(--mobile-px))] max-pc:right-auto max-pc:top-auto max-pc:bottom-[calc(62*var(--mobile-px))] max-pc:w-[calc(28*var(--mobile-px))]"
       />
       <Image
         src={greenLeaf}
         alt=""
-        className="animate-maple maple-delay-2 maple-reverse pointer-events-none absolute left-[calc(644*var(--px))] top-[calc(930*var(--px))] z-30 h-auto w-[calc(42*var(--px))] rotate-[35deg]"
+        className="animate-maple maple-delay-2 maple-reverse pointer-events-none absolute left-[calc(644*var(--px))] top-[calc(930*var(--px))] z-30 h-auto w-[calc(42*var(--px))] rotate-[35deg] max-pc:w-[calc(144*var(--px))]"
       />
     </section>
   );

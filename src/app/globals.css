@@ -207,6 +207,20 @@ body {
   animation-direction: reverse;
 }
 
+.animate-note {
+  animation: note-float 3.8s ease-in-out infinite;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.note-delay-1 {
+  animation-delay: 0.35s;
+}
+
+.note-delay-2 {
+  animation-delay: 0.85s;
+}
+
 .animate-cloud {
   animation: cloud-float 7.2s ease-in-out infinite;
   transform-origin: center;
@@ -305,6 +319,19 @@ body {
   }
 }
 
+@keyframes note-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-4deg);
+  }
+  40% {
+    transform: translate3d(0, calc(-12 * var(--px)), 0) rotate(6deg);
+  }
+  70% {
+    transform: translate3d(0, calc(-4 * var(--px)), 0) rotate(-2deg);
+  }
+}
+
 @keyframes maple-flutter {
   0%,
   100% {
@@ -341,6 +368,7 @@ body {
   .animate-star-small,
   .animate-maple,
   .animate-maple-fast,
+  .animate-note,
   .animate-cloud {
     animation: none;
   }
