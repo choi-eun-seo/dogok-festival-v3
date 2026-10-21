@@ -16,11 +16,11 @@ export const market = [
         tag: "유기농 애견간식"
     },
     {
-        name: "안녕, 솜사탕",
+        name: "안녕,솜사탕",
         tag: "먹거리"
     },
     {
-        name: "도곡 이록서울",
+        name: "이록",
         tag: "식물"
     },
     {
@@ -74,7 +74,40 @@ export const market = [
     {
         name: "스테디너리",
         tag: "도자기, 스티커"
-    }
+    },
+    {
+        name: "오후의 산보",
+        tag: "도자기, 스티커"
+    },
+    {
+        name: "파도해 작업실",
+        tag: "도자기, 스티커"
+    },
+    {
+        name: "The fleur de sel",
+        tag: "도자기, 스티커"
+    },
+    {
+        name: "꿀꿀스토어(애견의류)",
+        tag: "도자기, 스티커"
+    },
+    {
+        name: "큐리오브제",
+        tag: "도자기, 스티커"
+    },
+    {
+        name: "컨베이지(CONVEY.G)",
+        tag: "도자기, 스티커"
+    },
+    {
+        name: "아름다운 인연",
+        tag: "결혼중매"
+    },
+    {
+        name: "Good&Faithful",
+        tag: "도자기, 스티커"
+    },
+
 ]
 
 
@@ -105,10 +138,7 @@ export const play = [
     {
         name: "새끼손가락"
     },
-    {
-        name: "아름다운 인연",
-        tag: "결혼중매"
-    },
+
     {
         name: "쏠801"
     },
@@ -137,13 +167,19 @@ export const food_1 = [
     name: "알로하터틀",
   },
   {
-    name: "호로록 떡볶이",
+    name: "한박꽃떡볶이",
   },
   {
     name: "이천미 막걸리",
   },
   {
     name: "부녀회",
+  },
+  {
+    name: "다미카츠",
+  },
+  {
+    name: "비노 야미쿠스",
   },
 ];
 

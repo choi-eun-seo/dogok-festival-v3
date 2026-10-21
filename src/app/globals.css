@@ -64,11 +64,11 @@
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   /* pc: / max-pc: — 아래 미디어쿼리와 같은 값 */
-  --breakpoint-pc: 480px;
+  --breakpoint-pc: 768px;
 
 }
 
-@media (min-width: 480px) {
+@media (min-width: 768px) {
   :root {
     --px: calc(100vw / var(--design-pc));
   }
@@ -359,7 +359,7 @@ body {
   display: none;
 }
 
-@media (width < 480px) {
+@media (width < 768px) {
   :root {
     --header-h: calc(40 * var(--px));
   }

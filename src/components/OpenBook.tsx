@@ -18,7 +18,7 @@ export default function OpenBook({
   const clipId = `open-book-${useId().replace(/:/g, "")}`;
 
   return (
-    <svg viewBox="0 0 1188 810" fill="none" aria-hidden className={className}>
+    <svg preserveAspectRatio="none" viewBox="0 0 1188 810" fill="none" aria-hidden className={className}>
       <g clipPath={`url(#${clipId})`}>
         <path
           d="M1147.75 30.626H1181.91C1184.54 30.626 1186.67 32.7503 1186.67 35.374V803.92C1186.67 806.544 1184.54 808.668 1181.91 808.668H594.007H6.10149C3.47131 808.668 1.3418 806.544 1.3418 803.92V35.374C1.3418 32.7503 3.47131 30.626 6.10149 30.626H40.8546C40.8546 30.626 1127.35 31.0522 1146.9 30.6393L1147.76 30.626H1147.75Z"

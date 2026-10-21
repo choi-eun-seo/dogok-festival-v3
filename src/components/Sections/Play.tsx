@@ -98,8 +98,8 @@ function PlayCard({ name, tag }: { name: string; tag?: string }) {
 
 export default function Play() {
   return (
-    <section id="play" className="section-target relative min-h-[calc(1330*var(--px))] w-full bg-brand-green-300">
-      <div className="relative z-30 pt-[calc(65*var(--px))]">
+    <section id="play" className="mobile-chapter section-target relative min-h-[calc(1330*var(--px))] w-full bg-brand-green-300">
+      <div className="chapter-heading relative z-30 pt-[calc(65*var(--px))]">
         <p className="text-brand-brown-700 text-center font-suit text-[calc(18*var(--px))] font-bold">
           Chapter 2
         </p>
@@ -112,7 +112,7 @@ export default function Play() {
           체험의 한 페이지를 채워보세요.
         </p>
       </div>
-      <div className="absolute top-[calc(0*var(--px))] z-20 left-0 w-[calc(1185*var(--px))] h-auto ml-[calc(366*var(--px))]">
+      <div className="chapter-paper absolute top-[calc(0*var(--px))] z-20 left-0 w-[calc(1185*var(--px))] h-auto ml-[calc(366*var(--px))]">
         <OpenBook
           cover="#F4B1D0"
           edge="#FDE8F0"
@@ -120,7 +120,7 @@ export default function Play() {
           className="absolute left-0 h-auto w-[calc(1185*var(--px))]"
           />
       </div>
-      <div className="absolute scroll-snap-y-mandatory z-40 grid grid-cols-5 gap-[calc(12*var(--px))] ml-[calc(486*var(--px))] mt-[calc(40*var(--px))]">
+      <div className="chapter-grid absolute scroll-snap-y-mandatory z-40 grid grid-cols-5 gap-[calc(12*var(--px))] ml-[calc(486*var(--px))] mt-[calc(40*var(--px))]">
         {playData.map((item) => (
             <PlayCard key={item.name} name={item.name} tag={item.tag} />
         ))}

@@ -18,13 +18,13 @@ const schedule = [
   ["14:00~14:30", "개막식", ""],
   ["14:30~15:00", "장의현 퀄텟", ""],
   ["15:15~15:45", "015B", ""],
-  ["16:00~16:30", "", "매직&벌룬쇼"],
+  ["16:00~16:30", "매직&벌룬쇼", ""],
   ["16:30~17:00", "첼로가 노래하는 진스", ""],
 ];
 
 export default function Music() {
   return (
-    <div className="relative">
+    <div className="music-scene relative">
       <BookChapter
         id="music"
         chapter={4}
@@ -38,7 +38,7 @@ export default function Music() {
           </>
         }
       >
-        <div className="relative ml-[calc(219*var(--px))] mt-[calc(35*var(--px))] w-[calc(660*var(--px))]">
+        <div className="music-schedule relative ml-[calc(219*var(--px))] mt-[calc(35*var(--px))] w-[calc(660*var(--px))]">
           <table className="w-full table-fixed border-collapse text-center font-suit text-[calc(18*var(--px))] leading-[calc(24*var(--px))] text-[#392B28]">
             <caption className="sr-only">공연 시간표</caption>
             <colgroup>
@@ -89,7 +89,7 @@ export default function Music() {
         <Image
           src={tag}
           alt=""
-          className="pointer-events-none absolute -top-[calc(12*var(--px))] right-[calc(10*var(--px))] h-auto w-[calc(300*var(--px))]"
+          className="performer-tag pointer-events-none absolute -top-[calc(12*var(--px))] right-[calc(10*var(--px))] h-auto w-[calc(300*var(--px))]"
         />
         <Image
           src={guitar}

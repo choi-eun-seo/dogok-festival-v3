@@ -1,0 +1,119 @@
+/* Mobile content uses readable type; illustration coordinates scale separately. */
+@media (width < 768px) {
+  :root { --mobile-px: calc(100vw / 360); }
+  #map, .mobile-chapter, .music-scene, .healing-scene {
+    --px: calc(100vw / 1920);
+  }
+  .mobile-chapter, .book-chapter {
+    min-height: 0;
+    padding-bottom: calc(110 * var(--mobile-px));
+  }
+  .mobile-chapter {
+    padding-top: calc(22 * var(--mobile-px));
+    isolation: isolate;
+  }
+  .chapter-heading {
+    position: relative;
+    z-index: 30;
+    padding-top: calc(20 * var(--mobile-px));
+    margin-inline: auto;
+    width: calc(304 * var(--mobile-px));
+  }
+  .chapter-heading > :first-child { font-size: calc(10 * var(--mobile-px)); }
+  .chapter-heading > :nth-child(2) { font-size: calc(21 * var(--mobile-px)); line-height: 1.4; }
+  .chapter-heading > :nth-child(3) { font-size: calc(10 * var(--mobile-px)); padding-top: calc(6 * var(--mobile-px)); line-height: 1.5; }
+  .mobile-chapter .chapter-paper {
+    inset: 0 calc(8 * var(--mobile-px)) calc(90 * var(--mobile-px));
+    margin: 0;
+    width: auto;
+    height: auto;
+  }
+  .chapter-paper > svg { width: 100%; height: 100%; }
+  .chapter-paper > svg > g > path:nth-last-child(-n+2),
+  .chapter-page > svg > g > path:nth-last-child(-n+2) { display: none; }
+  .chapter-grid {
+    position: relative;
+    width: calc(292 * var(--mobile-px));
+    margin: calc(20 * var(--mobile-px)) auto calc(26 * var(--mobile-px));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: calc(6 * var(--mobile-px));
+  }
+  .chapter-grid > div {
+    width: auto;
+    height: auto;
+    min-height: calc(65 * var(--mobile-px));
+    padding: calc(10 * var(--mobile-px)) calc(3 * var(--mobile-px));
+    border-radius: calc(6 * var(--mobile-px));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .chapter-grid p { font-size: calc(11 * var(--mobile-px)); line-height: 1.45; }
+  .chapter-grid p + div {
+    max-width: 100%;
+    margin-top: calc(5 * var(--mobile-px));
+    padding: calc(2 * var(--mobile-px)) calc(3 * var(--mobile-px));
+    font-size: calc(8 * var(--mobile-px));
+    border-radius: calc(3 * var(--mobile-px));
+    overflow-wrap: anywhere;
+  }
+  .mobile-chapter > img:not(.animate-maple) { top: auto; bottom: calc(20 * var(--mobile-px)); }
+  .mobile-chapter > img.animate-maple { top: auto; bottom: calc(64 * var(--mobile-px)); }
+  #play > img:not(.animate-maple) { bottom: calc(14 * var(--mobile-px)); }
+  .food-grids {
+    position: relative;
+    z-index: 30;
+    width: calc(284 * var(--mobile-px));
+    margin: calc(38 * var(--mobile-px)) auto calc(30 * var(--mobile-px));
+    gap: calc(12 * var(--mobile-px));
+  }
+  .food-grids > div { flex: 1; min-width: 0; gap: calc(6 * var(--mobile-px)); grid-template-columns: 1fr; grid-auto-rows: auto; grid-template-rows: none; align-content: start; }
+  .food-grids > div > div { width: 100%; height: auto; min-height: calc(54 * var(--mobile-px)); padding: calc(10 * var(--mobile-px)) calc(4 * var(--mobile-px)); border-radius: calc(6 * var(--mobile-px)); }
+  .food-grids p { font-size: calc(12 * var(--mobile-px)); }
+  .food-grids p + div { font-size: calc(9 * var(--mobile-px)); margin-top: calc(4 * var(--mobile-px)); }
+  #food > img:nth-of-type(1), #food > img:nth-of-type(2) { top: calc(124 * var(--mobile-px)); bottom: auto; width: calc(24 * var(--mobile-px)); margin: 0; }
+  #food > img:nth-of-type(1) { left: 26%; }
+  #food > img:nth-of-type(2) { left: 67%; }
+  .chapter-page { width: calc(344 * var(--mobile-px)); margin-inline: auto; padding-bottom: calc(35 * var(--mobile-px)); }
+  .chapter-page > svg { width: 100%; height: 100%; }
+  .music-schedule { width: calc(292 * var(--mobile-px)); margin: calc(22 * var(--mobile-px)) auto 0; }
+  .music-schedule table { font-size: calc(10 * var(--mobile-px)); line-height: 1.4; }
+  .music-schedule col { width: 34%; }
+  .music-schedule col:first-child { width: 32%; }
+  .music-schedule th, .music-schedule td { height: calc(34 * var(--mobile-px)); padding: calc(4 * var(--mobile-px)) calc(2 * var(--mobile-px)); font-size: calc(10 * var(--mobile-px)); overflow-wrap: anywhere; }
+  .performer-tag { position: relative; top: auto; right: auto; width: calc(95 * var(--mobile-px)); margin: calc(14 * var(--mobile-px)) auto 0; }
+  .music-scene > img { top: auto; bottom: calc(25 * var(--mobile-px)); }
+  #music .chapter-page > img:not(.performer-tag):not(.animate-maple) { top: auto; bottom: 0; right: calc(12 * var(--mobile-px)); }
+  .healing-scene { background: var(--brand-green-300); }
+  #healing { padding-bottom: calc(105 * var(--mobile-px)); }
+  #healing .chapter-page { height: calc(425 * var(--mobile-px)); }
+  #healing h2 { font-size: calc(19 * var(--mobile-px)); }
+  .healing-cards { --px: calc(0.64 * var(--mobile-px)); top: calc(120 * var(--mobile-px)); left: calc(32 * var(--mobile-px)); width: calc(296 * var(--mobile-px)); padding-bottom: calc(12 * var(--mobile-px)); scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: #A86537 #FFF5E0; }
+  .healing-cards article { min-height: calc(400 * var(--px)); }
+  .healing-cards a { display: block; margin-top: auto; }
+  .healing-cards a p { min-height: 44px; display: grid; place-items: center; }
+  .healing-scene > img { bottom: calc(30 * var(--mobile-px)); }
+  .directions-panel { padding: calc(40 * var(--mobile-px)) calc(20 * var(--mobile-px)); }
+  .directions-panel > svg { display: none; }
+  .directions-panel > p { padding-top: 0; font-size: calc(22 * var(--mobile-px)); }
+  .directions-content { flex-direction: column; gap: calc(22 * var(--mobile-px)); padding: calc(22 * var(--mobile-px)) 0 0; }
+  .directions-content > :first-child { height: calc(210 * var(--mobile-px)); border-radius: calc(12 * var(--mobile-px)); }
+  .directions-content > :last-child > div { font-size: calc(12 * var(--mobile-px)); padding: calc(6 * var(--mobile-px)) calc(15 * var(--mobile-px)); }
+  .directions-content > :last-child > p { white-space: normal; font-size: calc(12 * var(--mobile-px)); padding-top: calc(12 * var(--mobile-px)); line-height: 1.8; }
+  .directions-content > :last-child > a { margin: calc(24 * var(--mobile-px)) auto 0; width: calc(240 * var(--mobile-px)); padding: calc(12 * var(--mobile-px)); font-size: calc(14 * var(--mobile-px)); min-height: 44px; }
+  .festival-footer { padding: calc(28 * var(--mobile-px)) calc(20 * var(--mobile-px)); text-align: center; }
+  .festival-footer > div { flex-direction: column; gap: calc(22 * var(--mobile-px)); }
+  .festival-footer > div > div:first-child img { width: calc(150 * var(--mobile-px)); }
+  .festival-footer > div > div:last-child { font-size: calc(10 * var(--mobile-px)); gap: calc(12 * var(--mobile-px)); line-height: 1.7; }
+  .festival-footer > div > div:last-child > div { flex-direction: column; padding-top: calc(15 * var(--mobile-px)); border-top: 1px solid #ddd; gap: calc(10 * var(--mobile-px)); }
+  .festival-footer img[alt="dogok"] { width: calc(90 * var(--mobile-px)); }
+}
+@media (width < 768px) {
+  #market { z-index: 20; }
+}
+@media (width < 768px) {
+  .program-viewport { overflow: clip; }
+  #map { --px: calc(100vw / 1280); width: calc(1920 * var(--px)); margin-left: calc(-320 * var(--px)); }
+  #map > div:first-child > p { font-size: calc(20 * var(--mobile-px)); }
+  #map > a[download] { min-height: 44px; display: grid; place-items: center; font-size: calc(12 * var(--mobile-px)); padding-block: calc(8 * var(--mobile-px)); }
+}

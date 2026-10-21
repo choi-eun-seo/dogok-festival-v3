@@ -12,9 +12,9 @@ export default function Food() {
   return (
     <section
       id="food"
-      className="section-target relative box-content min-h-[calc(1000*var(--px))] w-full bg-brand-green-300 pb-[calc(120*var(--px))]"
+      className="mobile-chapter section-target relative box-content min-h-[calc(1000*var(--px))] w-full bg-brand-green-300 pb-[calc(120*var(--px))]"
     >
-      <div className="relative z-30 pt-[calc(65*var(--px))]">
+      <div className="chapter-heading relative z-30 pt-[calc(65*var(--px))]">
         <p className="text-brand-brown-700 text-center font-suit text-[calc(18*var(--px))] font-bold">
           Chapter 3
         </p>
@@ -37,7 +37,7 @@ export default function Food() {
         alt=""
         className="absolute top-[calc(253*var(--px))] z-40 left-0 w-[calc(84*var(--px))] h-auto ml-[calc(1138*var(--px))]"
       />
-      <div className="absolute top-0 z-20 left-0 w-[calc(1185*var(--px))] h-auto ml-[calc(366*var(--px))]">
+      <div className="chapter-paper absolute top-0 z-20 left-0 w-[calc(1185*var(--px))] h-auto ml-[calc(366*var(--px))]">
         <OpenBook
           cover="#BAE1F6"
           edge="#EEEAE3"
@@ -45,7 +45,7 @@ export default function Food() {
           className="absolute left-0 h-auto w-[calc(1185*var(--px))]"
         />
       </div>
-      <div className="flex flex-row ml-[calc(562*var(--px))] mt-[calc(124*var(--px))] gap-[calc(60*var(--px))]">
+      <div className="food-grids flex flex-row ml-[calc(562*var(--px))] mt-[calc(124*var(--px))] gap-[calc(60*var(--px))]">
         <div className="z-40 grid grid-cols-2 gap-x-[calc(12*var(--px))] gap-y-[calc(12*var(--px))]">
           {food_1.map((item) => (
             <div

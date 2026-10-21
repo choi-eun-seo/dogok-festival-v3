@@ -28,13 +28,13 @@ const gangnamWaterworksDirections =
 export default function Outro() {
   return (
     <section id="outro">
-      <div className="relative bg-brand-yellow-300">
+      <div className="directions-panel relative bg-brand-yellow-300">
         <BrownStar className="top-[calc(95.5*var(--px))] left-[calc(823*var(--px))]" />
         <BrownStar className="top-[calc(95.5*var(--px))] right-[calc(822*var(--px))]" />
         <p className="text-center font-bold text-brand-brown-700 font-warhaven text-[calc(50*var(--px))] pt-[calc(78*var(--px))]">
           오시는 길
         </p>
-        <div className="flex flex-row pb-[calc(85*var(--px))] pt-[calc(60*var(--px))] gap-[calc(102*var(--px))] px-[calc(360*var(--px))]">
+        <div className="directions-content flex flex-row pb-[calc(85*var(--px))] pt-[calc(60*var(--px))] gap-[calc(102*var(--px))] px-[calc(360*var(--px))]">
           <VenueMap />
           <div className="shrink-0 ">
             <div className="w-fit bg-[#F7E8A8] px-[calc(39*var(--px))] py-[calc(8*var(--px))] whitespace-nowrap text-brand-brown-700 font-bold font-suit text-[calc(16*var(--px))] rounded-[calc(100*var(--px))]">
@@ -56,7 +56,7 @@ export default function Outro() {
           </div>
         </div>
       </div>
-      <div className="items-end pl-[calc(360*var(--px))] bg-gray-100 py-[calc(42*var(--px))]">
+      <div className="festival-footer items-end pl-[calc(360*var(--px))] bg-gray-100 py-[calc(42*var(--px))]">
         <div className="flex flex-row items-center gap-[calc(80*var(--px))]">
           <div>
             <Image

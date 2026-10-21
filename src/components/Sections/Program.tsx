@@ -177,6 +177,7 @@ function TitleStar() {
 
 export default function Program() {
   return (
+    <div className="program-viewport">
     <section id="map" className="section-target relative w-full">
       <div
         className="min-h-[calc(2792*var(--px))] w-full"
@@ -283,5 +284,6 @@ export default function Program() {
         />
       </div>
     </section>
+    </div>
   );
 }
