@@ -113,8 +113,7 @@ export default function Healing() {
               ))}
             </dl>
             <div className="-mt-[calc(20*var(--px))] mb-[calc(10*var(--px))] text-[calc(12*var(--px))] font-medium leading-relaxed text-[#9A8676]">
-              <p>주최 | 지구불시착, 아인북스, 책방뚝 독립서점, 주식회사 획기획</p>
-              <p>주관 | 주식회사 획기획</p>
+              <p>주최·주관 | 지구불시착, 아인북스, 책방뚝 독립서점</p>
             </div>
             <a
               href="https://docs.google.com/forms/d/1N-Y_ozLPh3jO5VSUupoGjGuXqLfv1-rCpzWN1Bkyk0A/edit"
