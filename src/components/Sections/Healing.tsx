@@ -67,7 +67,7 @@ export default function Healing() {
         <Image
           src={yellowMaple}
           alt=""
-          className="animate-maple maple-delay-1 pointer-events-none absolute right-[calc(175*var(--px))] -top-[calc(20*var(--px))] z-20 h-auto w-[calc(55*var(--px))]"
+          className="animate-maple maple-delay-1 pointer-events-none absolute right-[calc(175*var(--px))] -top-[calc(20*var(--px))] z-20 h-auto w-[calc(55*var(--px))] max-pc:hidden"
         />
         <Image
           src={maple}
@@ -142,7 +142,7 @@ export default function Healing() {
       <Image
         src={bag}
         alt=""
-        className="absolute bottom-[calc(150*var(--px))] w-[calc(194*var(--px))] h-auto left-[calc(1468*var(--px))] max-pc:w-[calc(97*var(--mobile-px))] max-pc:left-[calc(230*var(--mobile-px))] max-pc:bottom-[calc(150*var(--mobile-px))]"
+        className="absolute bottom-[calc(150*var(--px))] w-[calc(194*var(--px))] h-auto left-[calc(1468*var(--px))] max-pc:w-[calc(97*var(--mobile-px))] max-pc:left-[calc(330*var(--mobile-px))] max-pc:bottom-[calc(150*var(--mobile-px))]"
       />
       <Image
         src={yellowMaple}

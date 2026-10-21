@@ -180,6 +180,14 @@
     box-sizing: border-box;
     min-height: calc(900 * var(--mobile-px));
   }
+  /* Food/Market처럼 왼쪽 여백만 — 오른쪽 공백 없이 스크롤 */
+  #play .chapter-grid {
+    width: calc(100% - 20 * var(--mobile-px));
+    margin-top: calc(32 * var(--mobile-px));
+    margin-left: calc(20 * var(--mobile-px));
+    margin-right: 0;
+    padding-right: 0;
+  }
   /* 단풍이 위 섹션(Play/Food) 배경 위로 삐져나오게 */
   .music-scene {
     z-index: 40;
@@ -237,7 +245,7 @@
   }
   #healing .chapter-page { height: var(--mobile-book-height); }
   #healing h2 { font-size: calc(19 * var(--mobile-px)); }
-  .healing-cards { --px: calc(0.64 * var(--mobile-px)); top: calc(120 * var(--mobile-px)); left: calc(32 * var(--mobile-px)); width: calc(296 * var(--mobile-px)); padding-bottom: calc(12 * var(--mobile-px)); scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: #A86537 #FFF5E0; }
+  .healing-cards { --px: calc(0.64 * var(--mobile-px)); top: calc(120 * var(--mobile-px)); left: calc(32 * var(--mobile-px)); width: calc(400 * var(--mobile-px)); padding-bottom: calc(12 * var(--mobile-px)); scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: #A86537 #FFF5E0; }
   .healing-cards article { min-height: calc(400 * var(--px)); }
   .healing-cards a { display: block; margin-top: auto; }
   .healing-cards a p { min-height: 44px; display: grid; place-items: center; }
