@@ -76,7 +76,7 @@ export default function Healing() {
         />
       </BookChapter>
       <div aria-label="힐링 프로그램" tabIndex={0} className="healing-cards absolute top-[calc(264.5*var(--px))] left-[calc((366+142)*var(--px))] z-10 w-[calc(912*var(--px))] snap-x snap-proximity overflow-x-auto overflow-y-hidden font-suit">
-        <div className="flex w-max gap-[calc(16*var(--px))]">
+        <div className="healing-cards flex w-max gap-[calc(16*var(--px))]">
           <article className="flex w-[calc(430*var(--px))] shrink-0 snap-start min-h-[calc(390*var(--px))] flex-col items-center rounded-[calc(12*var(--px))] bg-[#FFF5E0] px-[calc(25*var(--px))] py-[calc(30*var(--px))] text-center">
             <ArticleTitle>야외도서관</ArticleTitle>
             <div

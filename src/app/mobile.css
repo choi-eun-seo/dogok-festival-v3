@@ -20,7 +20,7 @@
   .chapter-heading {
     position: relative;
     z-index: 30;
-    padding-top: calc(20 * var(--mobile-px));
+    padding-top: calc(44 * var(--mobile-px));
     margin-inline: auto;
     width: calc(304 * var(--mobile-px));
   }
@@ -92,27 +92,27 @@
   }
   .chapter-grid-inner > div {
     width: calc(152 * var(--mobile-px));
-    height: auto;
-    max-height: calc(79 * var(--mobile-px));
-    min-height: calc(65 * var(--mobile-px));
+    height: calc(91 * var(--mobile-px));
+    min-height: calc(91 * var(--mobile-px));
+    max-height: calc(91 * var(--mobile-px));
     padding: calc(10 * var(--mobile-px)) calc(3 * var(--mobile-px));
     border-radius: calc(6 * var(--mobile-px));
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  .chapter-grid-inner p { font-size: calc(11 * var(--mobile-px)); line-height: 1.45; }
+  .chapter-grid-inner p { font-size: calc(16 * var(--mobile-px)); line-height: 1.45; }
   #market .chapter-grid-inner > div {
-    height: calc(79 * var(--mobile-px));
-    min-height: calc(79 * var(--mobile-px));
-    max-height: none;
+    height: calc(91 * var(--mobile-px));
+    min-height: calc(91 * var(--mobile-px));
+    max-height: calc(91 * var(--mobile-px));
     padding-block: calc(14 * var(--mobile-px));
   }
   .chapter-grid-inner p + div {
     max-width: 100%;
     margin-top: calc(5 * var(--mobile-px));
-    padding: calc(2 * var(--mobile-px)) calc(3 * var(--mobile-px));
-    font-size: calc(8 * var(--mobile-px));
+    padding: calc(2 * var(--mobile-px)) calc(6 * var(--mobile-px));
+    font-size: calc(12 * var(--mobile-px));
     border-radius: calc(3 * var(--mobile-px));
     overflow-wrap: anywhere;
   }
@@ -141,7 +141,7 @@
   .food-mobile-grid {
     display: grid;
     width: max-content;
-    grid-template-rows: repeat(3, calc(79 * var(--mobile-px)));
+    grid-template-rows: repeat(3, calc(91 * var(--mobile-px)));
     grid-auto-columns: calc(152 * var(--mobile-px));
     gap: calc(8 * var(--mobile-px));
   }
@@ -150,6 +150,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: calc(91 * var(--mobile-px));
+    box-sizing: border-box;
     padding: calc(10 * var(--mobile-px));
     border-radius: calc(8 * var(--mobile-px));
     background: #E9F7FF;
@@ -187,12 +189,30 @@
     margin-left: calc(-310 * var(--mobile-px));
     height: 100%;
   }
-  .music-schedule { width: calc(292 * var(--mobile-px)); margin: calc(22 * var(--mobile-px)) auto 0; }
-  .music-schedule table { font-size: calc(10 * var(--mobile-px)); line-height: 1.4; }
-  .music-schedule col { width: 34%; }
-  .music-schedule col:first-child { width: 32%; }
-  .music-schedule th, .music-schedule td { height: calc(34 * var(--mobile-px)); padding: calc(4 * var(--mobile-px)) calc(2 * var(--mobile-px)); font-size: calc(10 * var(--mobile-px)); overflow-wrap: anywhere; }
-  .performer-tag { position: relative; top: auto; right: auto; width: calc(95 * var(--mobile-px)); margin: calc(14 * var(--mobile-px)) auto 0; }
+  .music-schedule {
+    width: calc(340 * var(--mobile-px));
+    margin: calc(22 * var(--mobile-px)) 0 0 calc(12 * var(--mobile-px));
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+  }
+  .music-schedule table {
+    width: calc(462 * var(--mobile-px));
+    min-width: calc(462 * var(--mobile-px));
+    height: calc(300.4 * var(--mobile-px));
+    font-size: calc(14 * var(--mobile-px));
+    line-height: 1.4;
+  }
+  .music-schedule col { width: calc(168 * var(--mobile-px)); }
+  .music-schedule col:first-child { width: calc(126 * var(--mobile-px)); }
+  .music-schedule th, .music-schedule td {
+    height: calc(34 * var(--mobile-px));
+    padding: 0 calc(2 * var(--mobile-px));
+    font-size: calc(14 * var(--mobile-px));
+    white-space: nowrap;
+  }
+  .music-schedule thead th { height: calc(27.9 * var(--mobile-px)); }
+  .performer-tag { display: none; }
   .music-scene > img { top: auto; bottom: calc(25 * var(--mobile-px)); }
   #music .chapter-page > img:not(.performer-tag):not(.animate-maple) { top: auto; bottom: 0; right: calc(12 * var(--mobile-px)); }
   .healing-scene { background: var(--brand-green-300); }
@@ -227,4 +247,8 @@
   #map { --px: calc(100vw / 1280); width: calc(1920 * var(--px)); margin-left: calc(-320 * var(--px)); }
   #map > div:first-child > p { font-size: calc(20 * var(--mobile-px)); }
   #map > a[download] { min-height: 44px; display: grid; place-items: center; font-size: calc(12 * var(--mobile-px)); padding-block: calc(8 * var(--mobile-px)); }
+}
+
+@media (width < 780px) {
+  .healing-cards { padding-top: calc(30 * var(--mobile-px)); }
 }

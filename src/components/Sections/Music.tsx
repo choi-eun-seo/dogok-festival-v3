@@ -38,7 +38,7 @@ export default function Music() {
           </>
         }
       >
-        <div className="music-schedule relative ml-[calc(219*var(--px))] mt-[calc(35*var(--px))] w-[calc(660*var(--px))]">
+        <div aria-label="공연 시간표 가로 스크롤" tabIndex={0} className="music-schedule relative ml-[calc(219*var(--px))] mt-[calc(35*var(--px))] w-[calc(660*var(--px))]">
           <table className="w-full table-fixed border-collapse text-center font-suit text-[calc(18*var(--px))] leading-[calc(24*var(--px))] text-[#392B28]">
             <caption className="sr-only">공연 시간표</caption>
             <colgroup>
