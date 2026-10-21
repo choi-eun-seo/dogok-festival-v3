@@ -179,7 +179,7 @@ export const food_1 = [
     name: "다미카츠",
   },
   {
-    name: "비노 야미쿠스",
+    name: "비노 아미쿠스",
   },
 ];
 
