@@ -80,16 +80,20 @@ export default function Outro() {
             </p>
             <div className="flex flex-row items-center gap-[calc(19*var(--px))]">
               <p className="font-bold">
-                주최 | 도곡메타세쿼이아 축제추진위원회
+                주최 | 지구불시착, 아인북스, 책방뚝 독립서점, 주식회사 획기획
               </p>
-              <Image
+              <p className="font-bold">
+                주관 | 주식회사 획기획
+              </p>
+
+              {/* <Image
                 src={dogok}
                 alt="dogok"
                 width={111}
                 height={20}
                 className="h-auto w-[calc(111*var(--px))]"
                 style={{ height: "auto" }}
-              />
+              /> */}
             </div>
           </div>
         </div>
