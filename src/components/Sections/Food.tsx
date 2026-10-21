@@ -45,6 +45,24 @@ export default function Food() {
           className="absolute left-0 h-auto w-[calc(1185*var(--px))]"
         />
       </div>
+      <div className="food-mobile-scroll" aria-label="먹거리 전체 부스 목록" tabIndex={0}>
+        <div className="food-mobile-grid">
+          {food_1.map((item, index) => {
+            const columns = Math.ceil(food_1.length / 2);
+            return (
+              <div key={item.name} className="food-mobile-card" style={{ gridRow: Math.floor(index / columns) + 1, gridColumn: index % columns + 1 }}>
+                <p>{item.name}</p>
+              </div>
+            );
+          })}
+          {food_2.map((item, index) => (
+            <div key={item.name} className="food-mobile-card" style={{ gridRow: 3, gridColumn: index + 1 }}>
+              <p>{item.name}</p>
+              <span>{item.tag}</span>
+            </div>
+          ))}
+        </div>
+      </div>
       <div className="food-grids flex flex-row ml-[calc(562*var(--px))] mt-[calc(124*var(--px))] gap-[calc(60*var(--px))]">
         <div aria-label="먹거리 부스 목록" tabIndex={0} className="w-[calc(400*var(--px))] overflow-x-auto z-40 grid grid-flow-col snap-x snap-mandatory grid-rows-[repeat(3,calc(97*var(--px)))] items-start gap-x-[calc(12*var(--px))] gap-y-[calc(12*var(--px))]">
           {food_1.map((item) => (

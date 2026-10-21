@@ -116,7 +116,7 @@ export default function Healing() {
               <p>주최·주관 | 아인서점 지구불시착 책방뚝</p>
             </div>
             <a
-              href="https://docs.google.com/forms/d/1N-Y_ozLPh3jO5VSUupoGjGuXqLfv1-rCpzWN1Bkyk0A/edit"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfPfL366AXnGqczPFyOBx8wE4g70-Y7o6-AHK53OaUHAZS_5g/viewform?usp=dialog"
               target="_blank"
               rel="noopener noreferrer"
             >

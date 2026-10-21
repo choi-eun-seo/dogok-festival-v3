@@ -1,6 +1,10 @@
+.food-mobile-scroll { display: none; }
 /* Mobile content uses readable type; illustration coordinates scale separately. */
 @media (width < 768px) {
-  :root { --mobile-px: calc(100vw / 360); }
+  :root {
+    --mobile-px: calc(100vw / 360);
+    --mobile-book-height: calc(568.32 * var(--mobile-px));
+  }
   #map, .mobile-chapter, .music-scene, .healing-scene {
     --px: calc(100vw / 1920);
   }
@@ -30,12 +34,12 @@
     bottom: auto;
     margin: 0 0 0 calc(-310 * var(--mobile-px));
     width: calc(620 * var(--mobile-px));
-    height: calc(583 * var(--mobile-px));
+    height: var(--mobile-book-height);
   }
   .chapter-paper > svg {
     position: relative;
     width: 100%;
-    height: auto;
+    height: 100%;
   }
   /* The mobile market book is taller than the desktop SVG's natural ratio. */
   #market {
@@ -44,7 +48,7 @@
   }
   #market .chapter-paper {
     width: calc(620.82 * var(--mobile-px));
-    height: calc(568.32 * var(--mobile-px));
+    height: var(--mobile-book-height);
     margin-left: calc(-310.41 * var(--mobile-px));
   }
   #market .chapter-paper > svg { height: 100%; }
@@ -115,46 +119,63 @@
   .mobile-chapter > img:not(.animate-maple) { top: auto; bottom: calc(20 * var(--mobile-px)); }
   .mobile-chapter > img.animate-maple { top: auto; bottom: calc(64 * var(--mobile-px)); }
   #play > img:not(.animate-maple) { bottom: calc(14 * var(--mobile-px)); }
-  .food-grids {
+  .food-grids { display: none; }
+  #food {
+    box-sizing: border-box;
+    min-height: calc(700 * var(--mobile-px));
+  }
+  #food .chapter-paper { height: var(--mobile-book-height); }
+  #food .chapter-paper > svg { height: 100%; }
+  #food > img:nth-of-type(1), #food > img:nth-of-type(2) { display: none; }
+  .food-mobile-scroll {
+    display: block;
     position: relative;
     z-index: 30;
-    width: calc(284 * var(--mobile-px));
-    margin: calc(38 * var(--mobile-px)) auto calc(30 * var(--mobile-px));
-    gap: calc(12 * var(--mobile-px));
-  }
-  .food-grids > div {
-    flex: 1 1 0;
-    min-width: 0;
+    width: calc(100% - 20 * var(--mobile-px));
+    margin: calc(32 * var(--mobile-px)) 0 calc(60 * var(--mobile-px)) calc(20 * var(--mobile-px));
     overflow-x: auto;
     overflow-y: hidden;
-    grid-auto-flow: column;
-    grid-auto-columns: 100%;
-    grid-template-columns: none;
-    grid-template-rows: repeat(3, calc(65 * var(--mobile-px)));
-    gap: calc(6 * var(--mobile-px));
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: x proximity;
     overscroll-behavior-x: contain;
   }
-  .food-grids > div > div {
-    box-sizing: border-box;
-    width: 100%;
-    min-width: 0;
-    height: 100%;
-    padding: calc(10 * var(--mobile-px)) calc(4 * var(--mobile-px));
-    border-radius: calc(6 * var(--mobile-px));
+  .food-mobile-grid {
+    display: grid;
+    width: max-content;
+    grid-template-rows: repeat(3, calc(79 * var(--mobile-px)));
+    grid-auto-columns: calc(152 * var(--mobile-px));
+    gap: calc(8 * var(--mobile-px));
+  }
+  .food-mobile-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    scroll-snap-align: start;
+    padding: calc(10 * var(--mobile-px));
+    border-radius: calc(8 * var(--mobile-px));
+    background: #E9F7FF;
+    color: var(--brand-brown-700);
+    font-family: var(--font-suit);
+    font-size: calc(14 * var(--mobile-px));
+    font-weight: 700;
+    text-align: center;
     word-break: keep-all;
+    scroll-snap-align: start;
   }
-  .food-grids p { font-size: calc(12 * var(--mobile-px)); }
-  .food-grids p + div { font-size: calc(9 * var(--mobile-px)); margin-top: calc(4 * var(--mobile-px)); }
-  #food > img:nth-of-type(1), #food > img:nth-of-type(2) { top: calc(124 * var(--mobile-px)); bottom: auto; width: calc(24 * var(--mobile-px)); margin: 0; }
-  #food > img:nth-of-type(1) { left: 26%; }
-  #food > img:nth-of-type(2) { left: 67%; }
+  .food-mobile-card span {
+    margin-top: calc(6 * var(--mobile-px));
+    padding: calc(2 * var(--mobile-px)) calc(4 * var(--mobile-px));
+    border-radius: calc(3 * var(--mobile-px));
+    background: #67C7FA;
+    color: white;
+    font-size: calc(10 * var(--mobile-px));
+    font-weight: 500;
+  }
+  #play {
+    box-sizing: border-box;
+    min-height: calc(700 * var(--mobile-px));
+  }
   .chapter-page {
+    min-height: var(--mobile-book-height);
     width: calc(344 * var(--mobile-px));
     margin-inline: auto;
     padding-bottom: calc(35 * var(--mobile-px));
@@ -164,7 +185,7 @@
     right: auto;
     width: calc(620 * var(--mobile-px));
     margin-left: calc(-310 * var(--mobile-px));
-    height: auto;
+    height: 100%;
   }
   .music-schedule { width: calc(292 * var(--mobile-px)); margin: calc(22 * var(--mobile-px)) auto 0; }
   .music-schedule table { font-size: calc(10 * var(--mobile-px)); line-height: 1.4; }
@@ -176,7 +197,7 @@
   #music .chapter-page > img:not(.performer-tag):not(.animate-maple) { top: auto; bottom: 0; right: calc(12 * var(--mobile-px)); }
   .healing-scene { background: var(--brand-green-300); }
   #healing { padding-bottom: calc(105 * var(--mobile-px)); }
-  #healing .chapter-page { height: calc(425 * var(--mobile-px)); }
+  #healing .chapter-page { height: var(--mobile-book-height); }
   #healing h2 { font-size: calc(19 * var(--mobile-px)); }
   .healing-cards { --px: calc(0.64 * var(--mobile-px)); top: calc(120 * var(--mobile-px)); left: calc(32 * var(--mobile-px)); width: calc(296 * var(--mobile-px)); padding-bottom: calc(12 * var(--mobile-px)); scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: #A86537 #FFF5E0; }
   .healing-cards article { min-height: calc(400 * var(--px)); }
