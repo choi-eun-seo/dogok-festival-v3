@@ -258,7 +258,15 @@
   .festival-footer img[alt="dogok"] { width: calc(90 * var(--mobile-px)); }
 }
 @media (width < 768px) {
-  .program-viewport,
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .program-viewport {
+    width: 100%;
+    overflow: clip;
+  }
   #map .program-load-wrap {
     overflow: visible;
   }
@@ -332,7 +340,7 @@
 
   #market {
     z-index: 20;
-    overflow: visible !important;
+    overflow: clip !important;
     background-color: transparent !important;
   }
   #market::before {

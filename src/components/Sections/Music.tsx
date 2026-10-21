@@ -98,7 +98,7 @@ export default function Music() {
         <Image
           src={guitar}
           alt=""
-          className="pointer-events-none absolute right-[calc(70*var(--px))] top-[calc(730*var(--px))] h-auto w-[calc(110*var(--px))] max-pc:w-[calc(40*var(--mobile-px))] max-pc:right-[calc(30*var(--mobile-px))] max-pc:top-[calc(600*var(--mobile-px))]"
+          className="pointer-events-none absolute right-[calc(70*var(--px))] top-[calc(730*var(--px))] h-auto w-[calc(110*var(--px))] max-pc:w-[calc(40*var(--mobile-px))] max-pc:right-[calc(10*var(--mobile-px))] max-pc:top-[calc(600*var(--mobile-px))]"
         />
         <Image
           src={note}
@@ -117,12 +117,12 @@ export default function Music() {
       <Image
         src={musicSm2}
         alt=""
-        className="animate-note note-delay-1 pointer-events-none absolute right-[calc(289*var(--px))] top-[calc(542*var(--px))] z-20 h-auto w-[calc(27*var(--px))] max-pc:w-[calc(13*var(--mobile-px))] max-pc:right-[calc(10*var(--mobile-px))] max-pc:top-[calc(690*var(--mobile-px))]"
+        className="animate-note note-delay-1 pointer-events-none absolute right-[calc(289*var(--px))] top-[calc(542*var(--px))] z-20 h-auto w-[calc(27*var(--px))] max-pc:w-[calc(13*var(--mobile-px))] max-pc:right-[calc(20*var(--mobile-px))] max-pc:top-[calc(690*var(--mobile-px))]"
       />
       <Image
         src={music}
         alt=""
-        className="animate-note pointer-events-none absolute left-[calc(257*var(--px))] top-[calc(542*var(--px))] z-20 h-auto w-[calc(42*var(--px))] max-pc:left-auto max-pc:w-[calc(20*var(--mobile-px))] max-pc:right-[calc(100*var(--mobile-px))] max-pc:top-[calc(625*var(--mobile-px))]"
+        className="animate-note pointer-events-none absolute left-[calc(257*var(--px))] top-[calc(542*var(--px))] z-20 h-auto w-[calc(42*var(--px))] max-pc:left-auto max-pc:w-[calc(20*var(--mobile-px))] max-pc:right-[calc(150*var(--mobile-px))] max-pc:top-[calc(625*var(--mobile-px))]"
       />
       <Image
         src={speaker}

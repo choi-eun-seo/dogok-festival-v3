@@ -105,12 +105,12 @@ export default function Food() {
       <Image
         src={food_group}
         alt=""
-        className="absolute top-[calc(875*var(--px))] z-40 left-0 w-[calc(217*var(--px))] h-auto ml-[calc(1487*var(--px))]"
+        className="absolute top-[calc(875*var(--px))] z-40 left-0 w-[calc(217*var(--px))] h-auto ml-[calc(1487*var(--px))] max-pc:hidden"
       />
       <Image
         src={yellowLeaf}
         alt=""
-        className="animate-maple maple-delay-1 pointer-events-none absolute left-[calc(1280*var(--px))] top-[calc(-20*var(--px))] z-30 h-auto w-[calc(80*var(--px))] -rotate-[20deg]"
+        className="animate-maple maple-delay-1 pointer-events-none absolute left-[calc(1280*var(--px))] top-[calc(-20*var(--px))] z-30 h-auto w-[calc(80*var(--px))] -rotate-[20deg] max-pc:hidden"
       />
     </section>
   );

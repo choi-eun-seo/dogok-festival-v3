@@ -66,7 +66,7 @@ export default function Market() {
       <Image
         src={greenLeaf}
         alt=""
-        className="animate-maple maple-delay-2 maple-reverse pointer-events-none absolute left-[calc(644*var(--px))] top-[calc(930*var(--px))] z-30 h-auto w-[calc(42*var(--px))] rotate-[35deg] max-pc:w-[calc(144*var(--px))]"
+        className="animate-maple maple-delay-2 maple-reverse pointer-events-none absolute left-[calc(644*var(--px))] top-[calc(930*var(--px))] z-30 h-auto w-[calc(42*var(--px))] rotate-[35deg] max-pc:w-[calc(144*var(--px))] max-pc:hidden"
       />
     </section>
   );
