@@ -71,10 +71,10 @@ export default function Outro() {
           <div className="flex flex-col gap-[calc(10*var(--px))] font-suit text-[#797979] text-[calc(16*var(--px))]">
             <p className="font-semibold">도곡 메타세쿼이아 로드 페스타 시즌3</p>
             <p>
-              상호 : (주)획기획
+              {/* 상호 : (주)획기획
               <br />
-              주소 : 서울 마포구 독막로 18, 3층
-              <br />
+              주소 : 서울 마포구 독막로 18, 3층 */}
+              {/* <br /> */}
               ©도곡 메타세쿼이아 로드 페스타 운영사무국. All rights reserved. |
               개인정보처리방침
             </p>
