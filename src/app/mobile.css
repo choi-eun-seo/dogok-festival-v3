@@ -5,7 +5,7 @@
 /* Mobile content uses readable type; illustration coordinates scale separately. */
 @media (width < 768px) {
   :root {
-    --mobile-px: calc(100vw / 360);
+    --mobile-px: calc(100vw / 460);
     --mobile-book-height: calc(568.32 * var(--mobile-px));
   }
   #map, .mobile-chapter, .music-scene, .healing-scene {
@@ -367,7 +367,7 @@
 
   /* 프로그램 소개 모바일 책장 (360 시안 293×328) — 높이 절반만큼 위로 */
   .program-mobile-shelf {
-    top: calc(1480 * var(--px) + var(--program-shift) - 120 * var(--mobile-px));
+    top: calc(1580 * var(--px) + var(--program-shift) - 120 * var(--mobile-px));
     left: 50%;
     width: calc(293 * var(--mobile-px));
     margin-left: calc(-146.5 * var(--mobile-px));
