@@ -40,7 +40,7 @@ export default function Outro() {
             <div className="w-fit bg-[#F7E8A8] px-[calc(39*var(--px))] py-[calc(8*var(--px))] whitespace-nowrap text-brand-brown-700 font-bold font-suit text-[calc(16*var(--px))] rounded-[calc(100*var(--px))]">
               대중교통 이용 시
             </div>
-            <p className="whitespace-nowrap text-brand-brown-700 font-suit text-[calc(16*var(--px))] pt-[calc(20*var(--px))]">
+            <p className="whitespace-nowrap text-brand-brown-700 font-suit text-[calc(16*var(--px))] pt-[calc(20*var(--px))] max-pc:text-[calc(14*var(--mobile-px))]">
               지하철: 매봉역 4번 출구 도보 10분 거리
               <br />
               버스: 4433, 강남02(마을) 영동2교 하차 후 도보 5분 거리

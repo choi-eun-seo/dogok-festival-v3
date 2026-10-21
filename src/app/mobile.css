@@ -1,4 +1,7 @@
 .food-mobile-scroll { display: none; }
+.program-hills {
+  --hill-side-inset: calc(-78 * var(--px));
+}
 /* Mobile content uses readable type; illustration coordinates scale separately. */
 @media (width < 768px) {
   :root {
@@ -24,9 +27,9 @@
     margin-inline: auto;
     width: calc(304 * var(--mobile-px));
   }
-  .chapter-heading > :first-child { font-size: calc(10 * var(--mobile-px)); }
+  .chapter-heading > :first-child { font-size: calc(14 * var(--mobile-px)); }
   .chapter-heading > :nth-child(2) { font-size: calc(21 * var(--mobile-px)); line-height: 1.4; }
-  .chapter-heading > :nth-child(3) { font-size: calc(10 * var(--mobile-px)); padding-top: calc(6 * var(--mobile-px)); line-height: 1.5; }
+  .chapter-heading > :nth-child(3) { font-size: calc(12 * var(--mobile-px)); padding-top: calc(6 * var(--mobile-px)); line-height: 1.5; }
   .mobile-chapter .chapter-paper {
     top: 0;
     left: 50%;
@@ -230,7 +233,7 @@
   .directions-content { flex-direction: column; gap: calc(22 * var(--mobile-px)); padding: calc(22 * var(--mobile-px)) 0 0; }
   .directions-content > :first-child { height: calc(210 * var(--mobile-px)); border-radius: calc(12 * var(--mobile-px)); }
   .directions-content > :last-child > div { font-size: calc(12 * var(--mobile-px)); padding: calc(6 * var(--mobile-px)) calc(15 * var(--mobile-px)); }
-  .directions-content > :last-child > p { white-space: normal; font-size: calc(12 * var(--mobile-px)); padding-top: calc(12 * var(--mobile-px)); line-height: 1.8; }
+  .directions-content > :last-child > p { white-space: normal; font-size: calc(14 * var(--mobile-px)); padding-top: calc(12 * var(--mobile-px)); line-height: 1.8; }
   .directions-content > :last-child > a { margin: calc(24 * var(--mobile-px)) auto 0; width: calc(240 * var(--mobile-px)); padding: calc(12 * var(--mobile-px)); font-size: calc(14 * var(--mobile-px)); min-height: 44px; }
   .festival-footer { padding: calc(28 * var(--mobile-px)) calc(20 * var(--mobile-px)); text-align: center; }
   .festival-footer > div { flex-direction: column; gap: calc(22 * var(--mobile-px)); }
@@ -240,13 +243,137 @@
   .festival-footer img[alt="dogok"] { width: calc(90 * var(--mobile-px)); }
 }
 @media (width < 768px) {
-  #market { z-index: 20; }
-}
-@media (width < 768px) {
-  .program-viewport { overflow: clip; }
-  #map { --px: calc(100vw / 1280); width: calc(1920 * var(--px)); margin-left: calc(-320 * var(--px)); }
+  .program-viewport,
+  #map .program-load-wrap {
+    overflow: visible;
+  }
+  #map { --px: calc(100vw / 1280); width: calc(1920 * var(--px)); margin-left: calc(-320 * var(--px)); position: relative; z-index: 15; overflow: hidden; }
   #map > div:first-child > p { font-size: calc(20 * var(--mobile-px)); }
   #map > a[download] { min-height: 44px; display: grid; place-items: center; font-size: calc(12 * var(--mobile-px)); padding-block: calc(8 * var(--mobile-px)); }
+
+  /*
+    저장 버튼(top 1250·px, 높이 44px)과 언덕 사이 = 302 (360 기준).
+    언덕·배경·책장·길은 같은 만큼 아래로 이동.
+  */
+  #map {
+    --program-save-top: calc(1250 * var(--px));
+    --program-hills-top: calc(var(--program-save-top) + 44px + 242 * var(--mobile-px));
+    --program-shift: calc(var(--program-hills-top) - 1360 * var(--px));
+  }
+  #map > div:first-child {
+    min-height: calc(2792 * var(--px) + var(--program-shift));
+  }
+  #map .program-hills {
+    top: var(--program-hills-top);
+    /* PC는 -78·px(밖으로). 모바일은 책장(가운데) 쪽으로 당김 */
+    --hill-side-inset: calc(36 * var(--mobile-px));
+  }
+  #map .program-hill-side {
+    transform: none;
+  }
+  #map .program-bg-image {
+    top: calc(1936 * var(--px) + var(--program-shift));
+  }
+  /*
+    길·사이 나무(scenery): 너비만 줄이고 height 강제하지 않음 (찌그러짐 방지)
+    원본 1027×1053 → 모바일 너비 300 기준 비율 유지
+  */
+  #map .program-load-wrap {
+    top: calc(2142 * var(--px) + var(--program-shift));
+    left: 50%;
+    margin-left: calc(-150 * var(--mobile-px));
+    width: calc(300 * var(--mobile-px));
+    height: auto;
+    z-index: 5;
+  }
+  #map .program-load {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    max-width: none;
+  }
+  #map .program-load-wrap > img:last-child {
+    /* load-scenery: 길 위 나무들 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+  #map .program-load-maple {
+    top: calc(70 * var(--mobile-px));
+    left: calc(70 * var(--mobile-px));
+    width: calc(28 * var(--mobile-px));
+  }
+  #map .program-load-leaf {
+    top: calc(140 * var(--mobile-px));
+    left: calc(210 * var(--mobile-px));
+    width: calc(18 * var(--mobile-px));
+  }
+  #map #program {
+    top: calc(1500 * var(--px) + var(--program-shift));
+  }
+
+  #market {
+    z-index: 20;
+    overflow: visible !important;
+    background-color: transparent !important;
+  }
+  #market::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: var(--brand-green-300);
+    pointer-events: none;
+  }
+  #market .market-load-bridge {
+    /* 지도 섹션에서 끝난 길의 마지막 403.6px만 이어서 표시한다. */
+    top: 0;
+    left: 50%;
+    z-index: 5;
+    width: calc(300 * var(--mobile-px));
+    height: calc(118 * var(--mobile-px));
+    margin-left: calc(-150 * var(--mobile-px));
+    overflow: hidden;
+  }
+  #market .market-load-bridge img {
+    position: absolute;
+    top: calc(-190 * var(--mobile-px));
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+  #market .chapter-heading { z-index: 30; }
+  #market .chapter-paper { z-index: 20; }
+  #market .chapter-grid { z-index: 40; }
+  #market > img { z-index: 30; }
+
+  /* 프로그램 소개 모바일 책장 (360 시안 293×328) — 높이 절반만큼 위로 */
+  .program-mobile-shelf {
+    top: calc(1480 * var(--px) + var(--program-shift) - 120 * var(--mobile-px));
+    left: 50%;
+    width: calc(293 * var(--mobile-px));
+    margin-left: calc(-146.5 * var(--mobile-px));
+  }
+  .program-mobile-links {
+    top: calc(68 * var(--mobile-px));
+    bottom: calc(28 * var(--mobile-px));
+    left: calc(45 * var(--mobile-px));
+    right: calc(28 * var(--mobile-px));
+    gap: calc(8 * var(--mobile-px));
+    justify-content: center;
+  }
+  .program-mobile-link {
+    display: block;
+    width: calc(203 * var(--mobile-px));
+    line-height: 0;
+  }
+  .program-mobile-link img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 @media (width < 780px) {

@@ -5,18 +5,23 @@ import person from "@/assets/main/person.svg";
 import group3 from "@/assets/program/group3.png";
 import group4 from "@/assets/program/group4.png";
 import OpenBook from "@/components/OpenBook";
+import load from "@/assets/program/load.svg";
 
 export default function Market() {
   return (
     <section id="market" className="mobile-chapter section-target relative box-content min-h-[calc(1000*var(--px))] w-full bg-brand-green-300 pb-[calc(120*var(--px))]">
+      {/* 모바일: 프로그램 길이 OpenBook 뒤로 이어짐 */}
+      <div className="market-load-bridge pointer-events-none absolute pc:hidden" aria-hidden>
+        <Image src={load} alt="" className="h-auto w-full" />
+      </div>
       <div className="chapter-heading relative z-30 pt-[calc(75*var(--px))]">
-        <p className="text-brand-brown-700 text-center font-suit text-[calc(18*var(--px))] font-bold">
+        <p className="text-brand-brown-700 text-center font-suit text-[calc(18*var(--px))] font-bold max-pc:text-[calc(14*var(--mobile-px))]">
           Chapter 1
         </p>
         <p className="text-brand-brown-700 text-center font-warhaven text-[calc(40*var(--px))] font-bold">
           MARKET : 플리마켓
         </p>
-        <p className="text-brand-brown-700 text-center font-suit text-[calc(14*var(--px))] pt-[calc(10*var(--px))] font-medium">
+        <p className="text-brand-brown-700 text-center font-suit text-[calc(14*var(--px))] pt-[calc(10*var(--px))] font-medium max-pc:text-[calc(12*var(--mobile-px))]">
           다채로운 취향과 이야기가 펼쳐지는
           <br />
           마켓의 한 페이지를 만나보세요.
@@ -25,7 +30,7 @@ export default function Market() {
       <div className="chapter-paper absolute top-0 z-20 left-0 w-[calc(1185*var(--px))] h-auto ml-[calc(366*var(--px))]">
         <OpenBook
           cover="#F8B23B"
-          className="absolute left-0 h-auto w-[calc(1185*var(--px))]"
+          className="absolute left-0 h-auto w-[calc(1185*var(--px))] z-50"
         />
       </div>
       <div

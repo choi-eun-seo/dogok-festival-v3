@@ -19,6 +19,13 @@ import load from "@/assets/program/load.svg";
 import maple from "@/assets/main/maple/maple_1.svg";
 import loadScenery from "@/assets/program/load-scenery.svg";
 import { useRef, useEffect } from "react";
+import moBookShelf from "@/assets/mo_bookshelf.svg";
+import marketBook from "@/assets/book/market.svg";
+import playBook from "@/assets/book/play.svg";
+import foodBook from "@/assets/book/food.svg";
+import musicBook from "@/assets/book/music.svg";
+import healingBook from "@/assets/book/healing.svg";
+import bigStar from "@/assets/main/big-star.png";
 
 const hillTrees = [
   { src: tree1, width: 173, offset: 0 },
@@ -32,11 +39,11 @@ const pillarHeight = 148;
 const pillarOverlap = 66;
 
 const bookCovers = [
-  { name: "MARKET", color: "#F8B23B", href: "#market" },
-  { name: "PLAY", color: "#ECB3CC", href: "#play" },
-  { name: "FOOD", color: "#C2E0F4", href: "#food" },
-  { name: "MUSIC", color: "#C6BBE4", href: "#music" },
-  { name: "HEALING", color: "#FBE8B9", href: "#healing" },
+  { name: "MARKET", color: "#F8B23B", href: "#market", mobileSrc: marketBook },
+  { name: "PLAY", color: "#ECB3CC", href: "#play", mobileSrc: playBook },
+  { name: "FOOD", color: "#C2E0F4", href: "#food", mobileSrc: foodBook },
+  { name: "MUSIC", color: "#C6BBE4", href: "#music", mobileSrc: musicBook },
+  { name: "HEALING", color: "#FBE8B9", href: "#healing", mobileSrc: healingBook },
 ];
 
 const treeInitialStyle = {
@@ -105,13 +112,13 @@ function HillTrees() {
     <div
       ref={sectionRef}
       aria-hidden="true"
-      className="pointer-events-none absolute inset-x-0 top-[calc(1360*var(--px))] h-[calc(620*var(--px))] overflow-hidden"
+      className="program-hills pointer-events-none absolute inset-x-0 top-[calc(1360*var(--px))] h-[calc(620*var(--px))] overflow-hidden"
     >
       {(["left", "right"] as const).map((side) => (
         <div
           key={side}
-          className="absolute bottom-0 h-full w-[calc(470*var(--px))]"
-          style={{ [side]: "calc(-78 * var(--px))" }}
+          className="program-hill-side absolute bottom-0 h-full w-[calc(470*var(--px))]"
+          style={{ [side]: "var(--hill-side-inset)" }}
         >
           {hillTrees.map((tree, index) => {
             const pillarWidth = Math.round(tree.width * 0.42);
@@ -213,7 +220,25 @@ export default function Program() {
         src={bird}
         alt=""
         priority
-        className="animate-bird-float block absolute top-[calc(540*var(--px))] left-0 w-[calc(172*var(--px))] h-auto object-cover ml-[calc(174*var(--px))]"
+        className="animate-bird-float block absolute top-[calc(540*var(--px))] left-0 w-[calc(172*var(--px))] h-auto object-cover ml-[calc(174*var(--px))] max-pc:top-[calc(1700*var(--px))] max-pc:ml-[calc(480*var(--px))]"
+      />
+      <Image
+        src={star}
+        alt=""
+        priority
+        className="animate-star-small block absolute right-0 h-auto object-cover max-pc:top-[calc(1700*var(--px))] max-pc:mr-[calc(680*var(--px))] pc:hidden max-pc:w-[calc(48*var(--px))]"
+      />
+      <Image
+        src={star}
+        alt=""
+        priority
+        className="animate-star-small block absolute left-0 h-auto object-cover max-pc:top-[calc(1880*var(--px))] max-pc:ml-[calc(460*var(--px))] pc:hidden max-pc:w-[calc(48*var(--px))]"
+      />
+      <Image
+        src={bigStar}
+        alt=""
+        priority
+        className="animate-star-big block absolute  right-0 h-auto object-cover max-pc:top-[calc(1800*var(--px))] max-pc:mr-[calc(480*var(--px))] pc:hidden max-pc:w-[calc(80*var(--px))]"
       />
       <Image
         src={map}
@@ -222,12 +247,12 @@ export default function Program() {
         className="absolute top-[calc(367*var(--px))] z-10 left-0 w-[calc(1162*var(--px))] h-auto object-cover ml-[calc(379*var(--px))] max-pc:top-[calc(400*var(--px))]"
       />
       <HillTrees />
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      <div className="program-bg pointer-events-none absolute inset-0 overflow-hidden">
         <Image
           src={bg}
           alt=""
           priority
-          className="absolute top-[calc(1936*var(--px))] left-0 h-auto w-full"
+          className="program-bg-image absolute top-[calc(1936*var(--px))] left-0 h-auto w-full"
         />
       </div>
       <a
@@ -237,37 +262,73 @@ export default function Program() {
       >
         이미지로 저장하기
       </a>
-      <Image
+      {/* 스크롤 앵커는 하나만 — 모바일/PC 이미지 위치가 같아도 id 중복 방지 */}
+      <span
         id="program"
-        src={bookshelf}
-        alt=""
-        priority
-        className="section-target absolute top-[calc(1500*var(--px))] left-0 z-20 w-[calc(1030*var(--px))] h-auto object-cover ml-[calc(445*var(--px))]"
+        aria-hidden
+        className="section-target absolute top-[calc(1500*var(--px))] left-0 max-pc:top-[calc(880*var(--px))]"
       />
-      <div className="absolute top-[calc(1710*var(--px))] left-0 z-20 ml-[calc(591*var(--px))] flex flex-row gap-[calc(22*var(--px))]">
-        {bookCovers.map((book) => (
-          <BookButton
-            key={book.name}
-            color={book.color}
-            name={book.name}
-            href={book.href}
-          />
-        ))}
+      {/* 모바일: 책장 + 가로형 프로그램 버튼 */}
+      <div className="program-mobile-shelf absolute z-20 pc:hidden">
+        <Image
+          src={moBookShelf}
+          alt="프로그램 소개"
+          priority
+          className="h-auto w-full"
+        />
+        <nav
+          aria-label="프로그램 소개"
+          className="program-mobile-links absolute inset-x-0 flex flex-col"
+        >
+          {bookCovers.map((book) => (
+            <a
+              key={book.name}
+              href={book.href}
+              className="program-mobile-link"
+              aria-label={book.name}
+            >
+              <Image
+                src={book.mobileSrc}
+                alt={book.name}
+                className="h-auto w-full"
+              />
+            </a>
+          ))}
+        </nav>
+      </div>
+      {/* PC: 책장 + 책 버튼 묶음 */}
+      <div className="hidden pc:contents">
+        <Image
+          src={bookshelf}
+          alt=""
+          priority
+          className="absolute top-[calc(1500*var(--px))] left-0 z-20 w-[calc(1030*var(--px))] h-auto object-cover ml-[calc(445*var(--px))]"
+        />
+        <div className="absolute top-[calc(1710*var(--px))] left-0 z-20 ml-[calc(591*var(--px))] flex flex-row gap-[calc(22*var(--px))]">
+          {bookCovers.map((book) => (
+            <BookButton
+              key={book.name}
+              color={book.color}
+              name={book.name}
+              href={book.href}
+            />
+          ))}
+        </div>
       </div>
       <div
         aria-hidden="true"
         className="program-load-wrap pointer-events-none absolute top-[calc(2142*var(--px))] left-0 z-10 ml-[calc(446*var(--px))] h-[calc(1053.6*var(--px))] w-[calc(1027*var(--px))]"
       >
-        <Image src={load} alt="" className="program-load absolute inset-0 h-auto w-full z-10" />
+        <Image src={load} alt="" className="program-load absolute inset-0 h-auto w-full" />
         <Image
           src={maple}
           alt=""
-          className="animate-maple absolute top-[calc(135*var(--px))] left-[calc(198*var(--px))] h-auto w-[calc(80*var(--px))]"
+          className="program-load-maple animate-maple absolute top-[calc(135*var(--px))] left-[calc(198*var(--px))] h-auto w-[calc(80*var(--px))]"
         />
         <svg
           viewBox="0 0 35 35"
           fill="none"
-          className="animate-maple absolute top-[calc(235*var(--px))] left-[calc(752*var(--px))] w-[calc(35*var(--px))] h-auto"
+          className="program-load-leaf animate-maple absolute top-[calc(235*var(--px))] left-[calc(752*var(--px))] w-[calc(35*var(--px))] h-auto"
         >
           <path
             d="M6 29C5 14 13 5 29 5C29 20 20 28 6 29Z"
