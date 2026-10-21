@@ -33,7 +33,7 @@ export default function Market() {
         tabIndex={0}
         className="chapter-grid absolute z-40 ml-[calc(486*var(--px))] mt-[calc(40*var(--px))] w-[calc(948*var(--px))] snap-x snap-proximity overflow-x-auto overflow-y-hidden"
       >
-        <div className="grid w-max grid-flow-col grid-rows-4 gap-[calc(12*var(--px))]">
+        <div className="chapter-grid-inner grid w-max grid-flow-col grid-rows-3 gap-[calc(12*var(--px))] pc:grid-rows-4">
           {marketData.map((item) => (
             <div
               key={item.name}

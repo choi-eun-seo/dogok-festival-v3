@@ -120,10 +120,12 @@ export default function Play() {
           className="absolute left-0 h-auto w-[calc(1185*var(--px))]"
           />
       </div>
-      <div className="chapter-grid absolute scroll-snap-y-mandatory z-40 grid grid-cols-5 gap-[calc(12*var(--px))] ml-[calc(486*var(--px))] mt-[calc(40*var(--px))]">
-        {playData.map((item) => (
+      <div className="chapter-grid absolute z-40 ml-[calc(486*var(--px))] mt-[calc(40*var(--px))] w-[calc(948*var(--px))] snap-x snap-proximity overflow-x-auto overflow-y-hidden pc:overflow-visible">
+        <div className="chapter-grid-inner grid w-max grid-flow-col grid-rows-3 gap-[calc(12*var(--px))] pc:grid-flow-row pc:grid-cols-5 pc:grid-rows-none">
+          {playData.map((item) => (
             <PlayCard key={item.name} name={item.name} tag={item.tag} />
-        ))}
+          ))}
+        </div>
       </div>
       <Image
         src={market}
