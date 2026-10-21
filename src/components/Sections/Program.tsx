@@ -219,7 +219,7 @@ export default function Program() {
         src={map}
         alt=""
         priority
-        className="absolute top-[calc(367*var(--px))] z-10 left-0 w-[calc(1162*var(--px))] h-auto object-cover ml-[calc(379*var(--px))]"
+        className="absolute top-[calc(367*var(--px))] z-10 left-0 w-[calc(1162*var(--px))] h-auto object-cover ml-[calc(379*var(--px))] max-pc:top-[calc(400*var(--px))]"
       />
       <HillTrees />
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -233,7 +233,7 @@ export default function Program() {
       <a
         href={map.src}
         download="도곡-메타세쿼이아-로드-페스타-행사장-지도.png"
-        className="absolute z-20 ml-[calc(712*var(--px))] top-[calc(1208*var(--px))] left-0 object-cover rounded-[calc(99*var(--px))] bg-brand-blue-500 text-white text-center font-suit text-[calc(30*var(--px))] font-bold py-[calc(22*var(--px))] px-[calc(140*var(--px))]"
+        className="absolute z-20 ml-[calc(712*var(--px))] top-[calc(1208*var(--px))] left-0 object-cover rounded-[calc(99*var(--px))] bg-brand-blue-500 text-white text-center font-suit text-[calc(30*var(--px))] font-bold py-[calc(22*var(--px))] px-[calc(140*var(--px))] max-pc:top-[calc(1250*var(--px))] max-pc:ml-[calc(650*var(--px))]"
       >
         이미지로 저장하기
       </a>
