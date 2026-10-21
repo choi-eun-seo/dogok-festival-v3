@@ -8,7 +8,7 @@ export const market = [
         tag: "안경"
     },
     {
-        name: "베이커리토드",
+        name: "베이커리 토드",
         tag: "베이커리"
     },
     {
@@ -40,7 +40,7 @@ export const market = [
         tag: "캐릭터잡화"
     },
     {
-        name: "분더키친",
+        name: "분더키친&라이프 온",
         tag: "과일청, 차"
     },
     {
@@ -56,11 +56,11 @@ export const market = [
         tag: "핸드메이드 액세서리"
     },
     {
-        name: "책방뚝 독립서점",
+        name: "책방뚝",
         tag: "도서 및 문구류"
     },
     {
-        name: "아인북스",
+        name: "아인서점",
         tag: "독립서점"
     },
     {
@@ -113,11 +113,11 @@ export const market = [
 
 export const play = [
     {
-        name: "유유아이 스튜디오",
+        name: "유유아이스튜디오",
         tag: "원데이클래스"
     },
     {
-        name: "라르크앙씨엘\n원데이클래스 강낭점",
+        name: "라르크앙씨엘\n캔들&비누공방",
         tag: "캔들"
     },
     {
@@ -129,7 +129,7 @@ export const play = [
         tag: "퍼퓸클래스"
     },
     {
-        name: "피규어뮤지엄w",
+        name: "피규어뮤지엄W",
     },
     {
         name: "바디프랜드",
@@ -146,10 +146,10 @@ export const play = [
         name: "강남구자원봉사센터"
     },
     {
-        name: "능인사회복지센터"
+        name: "능인종합사회복지관"
     },
     {
-        name: "매봉시니어센터"
+        name: "강남구립\n매봉시니어센터"
     },
     {
         name: "현장밀착\n열린 세금상담회"
@@ -161,7 +161,7 @@ export const food_1 = [
     name: "마누테라스",
   },
   {
-    name: "킹케밥 강남점",
+    name: "킹케밥",
   },
   {
     name: "알로하터틀",
