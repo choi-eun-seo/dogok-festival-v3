@@ -256,9 +256,9 @@ export default function Program() {
       </div>
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute top-[calc(2142*var(--px))] left-0 z-10 ml-[calc(446*var(--px))] h-[calc(1053.6*var(--px))] w-[calc(1027*var(--px))]"
+        className="program-load-wrap pointer-events-none absolute top-[calc(2142*var(--px))] left-0 z-10 ml-[calc(446*var(--px))] h-[calc(1053.6*var(--px))] w-[calc(1027*var(--px))]"
       >
-        <Image src={load} alt="" className="absolute inset-0 h-auto w-full" />
+        <Image src={load} alt="" className="program-load absolute inset-0 h-auto w-full z-10" />
         <Image
           src={maple}
           alt=""

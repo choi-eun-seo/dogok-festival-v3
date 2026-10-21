@@ -46,7 +46,7 @@ export default function Food() {
         />
       </div>
       <div className="food-grids flex flex-row ml-[calc(562*var(--px))] mt-[calc(124*var(--px))] gap-[calc(60*var(--px))]">
-        <div className="w-[calc(400*var(--px))] overflow-x-auto z-40 grid grid-flow-col snap-x snap-mandatory grid-rows-[repeat(3,calc(97*var(--px)))] items-start gap-x-[calc(12*var(--px))] gap-y-[calc(12*var(--px))]">
+        <div aria-label="먹거리 부스 목록" tabIndex={0} className="w-[calc(400*var(--px))] overflow-x-auto z-40 grid grid-flow-col snap-x snap-mandatory grid-rows-[repeat(3,calc(97*var(--px)))] items-start gap-x-[calc(12*var(--px))] gap-y-[calc(12*var(--px))]">
           {food_1.map((item) => (
             <div
               key={item.name}
@@ -58,7 +58,7 @@ export default function Food() {
             </div>
           ))}
         </div>
-        <div className="z-40 grid grid-cols-2 grid-rows-[repeat(3,calc(97*var(--px)))] items-start gap-x-[calc(12*var(--px))] gap-y-[calc(12*var(--px))]">
+        <div aria-label="푸드트럭 목록" tabIndex={0} className="z-40 grid grid-cols-2 grid-rows-[repeat(3,calc(97*var(--px)))] items-start gap-x-[calc(12*var(--px))] gap-y-[calc(12*var(--px))]">
           {food_2.map((item) => (
             <div
               key={item.name}
